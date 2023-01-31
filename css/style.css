@@ -33,8 +33,34 @@ header {
 
 }
 
-footer {
 
+
+.container {
+
+}
+
+.container-fluid {
+     
+}
+
+footer {
+     width: 100%;
+     background-color: black;
+     padding: 2rem 0;
+}
+
+.footer-navbar {
+     width: 40%;
+     align-items: center;
+     justify-content: space-between;
+}
+
+.footer-nav-item {
+     display: flex;
+}
+
+.footer-nav-link {
+     display: flex;
 }
 
 /******************************************
