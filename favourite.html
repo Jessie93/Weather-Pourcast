@@ -13,7 +13,7 @@
   <title>Favourites</title>
 </head>
 <body>
-
+  <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">Cocktail Picker</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -29,19 +29,52 @@
 		</div>
 	</nav>
 
-  <div class="container">
-    <header>
-      <h1>Favourite Cocktails</h1>
-    </header>
-    <div class="card">
-      <div class="card-header">
-        <h2>Your Favourite Cocktails Are:</h2>
-      </div>
-      <div class="card-body">
-        <!-- List of favourite cocktails goes here-->
-      </div>
+  <!-- Jumbotron section -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Favourite Cocktails</h1>
     </div>
   </div>
+  <div class="container">
+    <section class="card row flex-row-reverse cocktail-card bg-light">
+        <img class="col-lg-4 card-img-end img-fluid p-0 cocktail-thumb" src="images/cocktail-image-example.jpg" />
+        <div class="col-lg-8 card-body">
+            <h2 class="card-title cocktail-title">Cocktail Title</h2>
+            <p class="card-text cocktail-instructions">Intructions for cocktail goes here</p>
+      <ul class="list-group-flush cocktail-ingridients">
+        <li class="ingridient">First ingridient</li>
+        <li class="ingridient">Second ingridient</li>
+      </ul>
+      <button class="btn btn-primary" id="faveBtn">Delete Favourite</button>
+        </div>
+    </section>  
+  </div>
+
+  <footer>
+    <ul class="nav flex-row footer-navbar mx-auto">
+      <li class="nav-item mb-2 footer-nav-item">
+        <a href="#" class="nav-link p-0 text-muted footer-nav-link">
+          Information
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a href="#" class="nav-link p-0 text-muted">
+          Services
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a href="#" class="nav-link p-0 text-muted">
+          Cocktails
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a href="#" class="nav-link p-0 text-muted">
+          Follow Us
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
   <script src="js/script.js"></script>
 </body>
 </html>
