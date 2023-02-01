@@ -42,7 +42,8 @@ body {
 
 h1{
      font-size: 90px;
-     margin-top: 200px;
+     margin-top: 100px;
+     margin-left: 60px;
      color: #371311;
 }
 
@@ -51,7 +52,7 @@ h1{
      background-image: url(../images/pexels-olena-bohovyk-3604314.jpg);
      background-size: cover;
      background-position: left;
-     height: 100vh;
+     height: 95vh;
 }
 
 /******************************************
@@ -98,3 +99,8 @@ footer {
      background-color: #371311;
      color: white;
 }
+
+.custom-color:hover{
+     color: white !important;
+}
+
