@@ -61,16 +61,17 @@
     </Section>
 
 
-
-
-
-    <section class="card row flex-row-reverse cocktail-card">
-        <img class="col-lg-4 card-img-end img-fluid p-0" src="images/cocktail-image-example.jpg" />
+    <section class="card row flex-row-reverse cocktail-card bg-light">
+        <img class="col-lg-4 card-img-end img-fluid p-0 cocktail-thumb" src="images/cocktail-image-example.jpg" />
         <div class="col-lg-8 card-body">
-            <h2 class="card-title">Cocktail Title</h2>
-            <p class="card-text">Description of recipe. might need to add an unordered list for the ingridients blah blah blah blah sidfiondsa fisudfn</p>
-			<a class="btn btn-primary" id="faveBtn">Add to favourites</a>
-			<a class="btn btn-primary" id="rollAgainBtn">Roll again</a>
+            <h2 class="card-title cocktail-title">Cocktail Title</h2>
+            <p class="card-text cocktail-instructions">Intructions for cocktail goes here</p>
+			<ul class="list-group-flush cocktail-ingridients">
+				<li class="ingridient">First ingridient</li>
+				<li class="ingridient">Second ingridient</li>
+			</ul>
+			<button class="btn custom-color" id="faveBtn">Add to favourites</button>
+			<button class="btn custom-color" id="rollAgainBtn">Roll again</button>
         </div>
     </section>
 
@@ -101,7 +102,7 @@
 	</ul>
 </footer>		  
 
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 
