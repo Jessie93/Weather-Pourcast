@@ -40,7 +40,10 @@ body {
 
 h1{
      font-size: 90px;
+     margin-top: 200px;
+     color: #371311;
 }
+
 
 .bg-image{
      background-image: url(../images/pexels-olena-bohovyk-3604314.jpg);
@@ -89,3 +92,7 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.custom-color{
+     background-color: #371311;
+     color: white;
+}
