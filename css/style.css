@@ -29,6 +29,8 @@ commenting it out for now so we can see what the card looks like */
      display: none;
 } */
 
+
+
 /******************************************
 /* BASE STYLES
 /*******************************************/
@@ -39,14 +41,18 @@ body {
 
 
 h1{
-     font-size: 80px;
+     font-size: 90px;
+     margin-top: 100px;
+     margin-left: 60px;
+     color: #371311;
 }
+
 
 .bg-image{
      background-image: url(../images/pexels-olena-bohovyk-3604314.jpg);
      background-size: cover;
      background-position: left;
-     height: 100vh;
+     height: 95vh;
 }
 
 /******************************************
@@ -89,3 +95,12 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.custom-color{
+     background-color: #371311;
+     color: white;
+}
+
+.custom-color:hover{
+     color: white !important;
+}
+

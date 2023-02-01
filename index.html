@@ -44,21 +44,34 @@
 		</div>
 	</nav>
 	
-<Section id="jumbotron" class="p-5 mb-4 bg-image rounded-3">
-	<div class="container-fluid py-5">
-	 <h1 class="display-5 fw-bold">Please enter you Town or City</h1>
-	 <p class="col-md-8 fs-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi magni quas libero quisquam sed nihil distinctio aliquam. Pariatur quis suscipit est a natus cumque amet sint, porro debitis minima ut.</p>
-	 <button class="btn btn-primary btn-lg" type="button">Example button</button>
-	</div>
- </section>
-	  
-    <section class="card row flex-row-reverse cocktail-card">
-        <img class="col-lg-4 card-img-end img-fluid p-0" src="images/cocktail-image-example.jpg" />
+
+<!--Jumbotron-->
+    <Section id="jumbotron" class="p-5 bg-image rounded-3">
+        <div class="container-fluid d-flex h-70"> 
+            <h1 class="display-5 fw-bold pt-5">Please enter your <br> Town or City</h1>
+        </div>
+    
+        <form class="form-inline p-3">
+            <div class="form-group mr-1 pl-5">
+              <input type="text" class="form-control col-md-12" placeholder="Enter your location here">
+            </div>
+            <button class="btn custom-color" type="submit">Submit</button>
+              </div>
+        </form>
+    </Section>
+
+
+    <section class="card row flex-row-reverse cocktail-card bg-light">
+        <img class="col-lg-4 card-img-end img-fluid p-0 cocktail-thumb" src="images/cocktail-image-example.jpg" />
         <div class="col-lg-8 card-body">
-            <h2 class="card-title">Cocktail Title</h2>
-            <p class="card-text">Description of recipe. might need to add an unordered list for the ingridients blah blah blah blah sidfiondsa fisudfn</p>
-			<a class="btn btn-primary" id="faveBtn">Add to favourites</a>
-			<a class="btn btn-primary" id="rollAgainBtn">Roll again</a>
+            <h2 class="card-title cocktail-title">Cocktail Title</h2>
+            <p class="card-text cocktail-instructions">Intructions for cocktail goes here</p>
+			<ul class="list-group-flush cocktail-ingridients">
+				<li class="ingridient">First ingridient</li>
+				<li class="ingridient">Second ingridient</li>
+			</ul>
+			<button class="btn custom-color" id="faveBtn">Add to favourites</button>
+			<button class="btn custom-color" id="rollAgainBtn">Roll again</button>
         </div>
     </section>
 
@@ -89,7 +102,7 @@
 	</ul>
 </footer>		  
 
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 
