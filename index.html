@@ -46,19 +46,26 @@
 	
 
 <!--Jumbotron-->
-    <Section id="jumbotron" class="p-5 bg-image rounded-3">
-        <div class="container-fluid d-flex h-70"> 
-            <h1 class="display-5 fw-bold pt-5">Please enter your <br> Town or City</h1>
+<section id="jumbotron">
+	<div class="jumbotron_overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" loading="lazy" class="jumborton_video">
+        <source src="/images/pexels-george-morina-5821366.mp4" type="video/mp4">
+    </video>
+    <div class="jumbotron_content h-100 container-xxl "> 
+        <div class="d-flex h-100 align-item-center">
+        <h1 class="display-5 fw-bold pt-5">Please enter your <br> Town or City</h1>
         </div>
-    
-        <form class="form-inline p-3">
-            <div class="form-group mr-1">
-              <input type="text" class="form-control col-md-12" placeholder="Enter your location here">
-            </div>
-            <button class="btn custom-color" type="submit">Submit</button>
-              </div>
-        </form>
-    </Section>
+		<form class="jumbotron_form p-3 form-inline">
+			<div class=" form-group pl-5">
+				<input type="text" class="form-control" placeholder="Enter your location here">
+			</div>
+			<div class="pl-3">
+				<button type="submit" class="btn custom-color">Enter</button>
+			</div>
+		</form>
+    </div>
+
+</section>
 
 
     <section class="card row flex-row-reverse cocktail-card bg-light">
