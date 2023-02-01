@@ -23,6 +23,27 @@
 </head>
 
 <body>
+	<!--Navbar-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Cocktail Picker</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Cocktails</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">favourites</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 <Section id="jumbotron" class="p-5 mb-4 bg-image rounded-3">
 	<div class="container-fluid py-5">
 	 <h1 class="display-5 fw-bold">Please enter you Town or City</h1>
@@ -31,8 +52,7 @@
 	</div>
  </section>
 	  
-<div class="container my-5">
-    <div class="card row flex-row-reverse">
+    <section class="card row flex-row-reverse cocktail-card">
         <img class="col-lg-4 card-img-end img-fluid p-0" src="images/cocktail-image-example.jpg" />
         <div class="col-lg-8 card-body">
             <h2 class="card-title">Cocktail Title</h2>
@@ -40,9 +60,18 @@
 			<a class="btn btn-primary" id="faveBtn">Add to favourites</a>
 			<a class="btn btn-primary" id="rollAgainBtn">Roll again</a>
         </div>
-    </div>
-</div>
-		  
+    </section>
+
+
+<footer class="col-6 col-md-2 mb-3">
+	<ul class="nav flex-column">
+		<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Information</a></li>
+		<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Services</a></li>
+		<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cocktails</a></li>
+		<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Follow Us</a></li>
+		
+	</ul>
+</footer>		  
 
 
 	<script type="text/javascript" src="js/script.js"></script>

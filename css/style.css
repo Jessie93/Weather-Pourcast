@@ -17,6 +17,10 @@
 	clear: both;
 }
 
+.cocktail-card {
+     margin: 5%;
+}
+
 /* to hide the card until it's been filled with a cocktail
 need to add javascript/jquery so that the class is removed dynamically
 commenting it out for now so we can see what the card looks like */
