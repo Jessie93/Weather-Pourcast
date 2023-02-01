@@ -25,9 +25,6 @@ body {
 
 }
 
-h1{
-     font-size: 80px;
-}
 
 /******************************************
 /* LAYOUT
@@ -40,12 +37,7 @@ footer {
 
 }
 
-.bg-image{
-     background-image: url(../assets/pexels-olena-bohovyk-3604314.jpg);
-     background-size: cover;
-     background-position: left;
-     height: 100vh;
-}
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
