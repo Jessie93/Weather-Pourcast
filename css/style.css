@@ -46,6 +46,9 @@ h1{
      color: #371311;
 }
 
+h5{
+     padding: 2%;
+}
 
 .bg-image{
      background-image: url(../images/pexels-olena-bohovyk-3604314.jpg);
