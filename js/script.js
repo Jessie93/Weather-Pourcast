@@ -1,6 +1,6 @@
-$(document).ready(function () {
-    var cocktailTitleEl = $('#cocktail-title')
-    var instructionsEl = $('#cocktail-instructions')
+
+var cocktailTitleEl = $('#cocktail-title')
+var instructionsEl = $('#cocktail-instructions')
 
 
 
@@ -41,72 +41,22 @@ function getFeaturedCocktail() {
 
 
 
+        //   if (response.drinks[0].strMeasure1 != "null") {
+        //     $('#cocktail-ingredients').append(`<li>${response.drinks[0].strMeasure1} ${response.drinks[0].strIngredient1}</li>`);
+        //   }
+        //   if (response.drinks[0].strMeasure2 != "null") {
+        //     $('#cocktail-ingredients').append(`<li>${response.drinks[0].strMeasure2} ${response.drinks[0].strIngredient2}</li>`);
+        //   }
+        //   if (response.drinks[0].strMeasure3 != "null") {
+        //     $('#cocktail-ingredients').append(`<li>${response.drinks[0].strMeasure3} ${response.drinks[0].strIngredient3}</li>`);
+        //   }
 
-            //   if (response.drinks[0].strMeasure1 != "null") {
-            //     $('#cocktail-ingredients').append(`<li>${response.drinks[0].strMeasure1} ${response.drinks[0].strIngredient1}</li>`);
-            //   }
-            //   if (response.drinks[0].strMeasure2 != "null") {
-            //     $('#cocktail-ingredients').append(`<li>${response.drinks[0].strMeasure2} ${response.drinks[0].strIngredient2}</li>`);
-            //   }
-            //   if (response.drinks[0].strMeasure3 != "null") {
-            //     $('#cocktail-ingredients').append(`<li>${response.drinks[0].strMeasure3} ${response.drinks[0].strIngredient3}</li>`);
-            //   }
 
 
-        
+    });
+}
 
-        });
-    }
-
-    getFeaturedCocktail();
-    /**************************************************
-     * Get weather in user's city
-    ****************************************************/
-
-    var apiKey = "&appid=430a3842b09d883ae73a59e0c1d18fa2"
-    var city;
-    var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=";
-
-    // Build the URL for querying the weather API
-    function buildQueryURL() {
-        var queryURL = apiURL + city + apiKey;
-        return queryURL;   
-    }
-    console.log("Query URL: " + buildQueryURL());
-
-    // Click handler for search city enter button
-    $("#search-btn").on("click", function (event) {
-        event.preventDefault();
-        city = $("#search-input").val();
-        queryURL = buildQueryURL();
-        
-
-        // Make an AJAX call to the openweather API to retrieve data
-        $.ajax({
-            url: queryURL,
-            method: "GET",
-        }).then(function (response) {
-            console.log(response);
-
-            // Replace HTML cocktail card div with cocktail suitable for the weather
-            function updateCard() {
-                var tempK = response.main.temp;
-                var tempC = (tempK - 273.15).toFixed(2); // converts default Kelvin temperature to Celcius
-                var sugestionTitle = $("<h2>")
-                    .addClass("sugestion-title")
-                    .text("The tempreature in " + city + " is " + tempC + "°C.");
-                $("#cocktail-card").prepend(sugestionTitle);
-            }
-            updateCard();
-        }); 
-
-        
-        
-    });// end of click event listener
-        
-   
-
-}); // end document.ready function
+getFeaturedCocktail();
 
 
 
@@ -135,4 +85,4 @@ function getFeaturedCocktail() {
             <button class="btn custom-color" id="faveBtn">Add to favourites</button>
             <button class="btn custom-color" id="rollAgainBtn">Roll again</button>
         </div>
-   /* // </section> */
+    // </section> */
