@@ -1,129 +1,129 @@
 /* Box Model Hack */
 * {
      -moz-box-sizing: border-box;
-}
-
-/* Clear fix hack */
-.clearfix:after {
+   }
+   
+   /* Clear fix hack */
+   .clearfix:after {
      content: ".";
      display: block;
      clear: both;
      visibility: hidden;
      line-height: 0;
      height: 0;
-}
-
-.clear {
-	clear: both;
-}
-
-.cocktail-card {
+   }
+   
+   .clear {
+   clear: both;
+   }
+   
+   .cocktail-card {
      margin: 5%;
-}
-
-/* to hide the card until it's been filled with a cocktail
-need to add javascript/jquery so that the class is removed dynamically
-commenting it out for now so we can see what the card looks like */
-
-/* .hide {
+   }
+   
+   /* to hide the card until it's been filled with a cocktail
+   need to add javascript/jquery so that the class is removed dynamically
+   commenting it out for now so we can see what the card looks like */
+   
+   /* .hide {
      display: none;
-} */
-
-
-
-/******************************************
-/* BASE STYLES
-/*******************************************/
-
-body {
-
-}
-
-
-h1{
+   } */
+   
+   
+   
+   /******************************************
+   /* BASE STYLES
+   /*******************************************/
+   
+   body {
+   
+   }
+   
+   
+   h1{
      font-size: 90px;
      margin-top: 60px;
      margin-left: 60px;
      color: #ffffff;
-}
-
-h5{
+   }
+   
+   h5{
      padding: 2%;
-}
-
-/* .bg-image{
+   }
+   
+   /* .bg-image{
      background-image: url(../images/pexels-olena-bohovyk-3604314.jpg);
      background-size: cover;
      background-position: left;
      height: 95vh;
-} */
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-header {
-
-}
-
-
-
-.container {
-
-}
-
-.container-fluid {
+   } */
+   
+   /******************************************
+   /* LAYOUT
+   /*******************************************/
+   header {
+   
+   }
+   
+   
+   
+   .container {
+   
+   }
+   
+   .container-fluid {
      
-}
-
-/* Code brings nav bar to the front */
-.navbar {
+   }
+   
+   /* Code brings nav bar to the front */
+   .navbar {
      z-index: 1;
      position: relative;
    }
    
-
-footer {
+   
+   footer {
      width: 100%;
      background-color: black;
      padding: 2rem 0;
-}
-
-.footer-navbar {
+   }
+   
+   .footer-navbar {
      width: 40%;
      align-items: center;
      justify-content: space-between;
-}
-
-.footer-nav-item {
+   }
+   
+   .footer-nav-item {
      display: flex;
-}
-
-footer a:hover{
+   }
+   
+   footer a:hover{
      color: #f1f0f0;
      text-decoration: none;
-}
-
-.footer-nav-link {
+   }
+   
+   .footer-nav-link {
      display: flex;
      color: rgba(213, 208, 208, 0.729);
      font-weight:light;
-}
-
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
-.custom-color{
+   }
+   
+   /******************************************
+   /* ADDITIONAL STYLES
+   /*******************************************/
+   .custom-color{
      background-color: #371311;
      color: white;
-}
-
-.custom-color:hover{
+   }
+   
+   .custom-color:hover{
      color: white !important;
-}
-
-
-/* Jumbotron */
-.jumbotron_content {
+   }
+   
+   
+   /* Jumbotron */
+   .jumbotron_content {
      position: absolute;
      top: 200px;
      z-index: 1;
@@ -134,17 +134,16 @@ footer a:hover{
      width: 100%;
      object-fit: cover;
    }
-
+   
    .jumbotron_form {
      position: absolute;
      top: 350px;
      z-index: 1;
    }
-
-.jumbotron_overlay {
+   
+   .jumbotron_overlay {
      position: absolute;
      height: 790px;
      width: 100%;
      background-color: rgba(0, 0, 0, 0.3);
    }
-
