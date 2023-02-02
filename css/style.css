@@ -144,17 +144,34 @@ footer a:hover{
 /******************************************
 /* MEDIA QUERY
 /*******************************************/
-
-   @media only screen and (max-width: 480px)  {
+/* Extra Small devices */
+   @media only screen and (max-width: 600px)  {
      h1 {
-         font-size: 60px;
+         font-size: 40px;
      }
 }
 
-
-
-@media only screen and (max-width: 979px) {
+/* Small devices */
+@media only screen and (max-width: 768px) {
      h1 {
           font-size: 60px;
       }
-}
+ }
+
+
+/* Medium devices */
+@media only screen and (max-width: 1260px) {
+     h1 {
+          font-size: 70px;
+      }
+ }
+
+/* Large devices */
+/* @media only screen and (min-width: 979px) {
+     h1 {
+          font-size: 100px;
+      }
+     }
+
+ */
+
