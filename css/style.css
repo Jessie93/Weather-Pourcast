@@ -5,6 +5,10 @@
    
    /* Clear fix hack */
    .clearfix:after {
+   }
+   
+   /* Clear fix hack */
+   .clearfix:after {
      content: ".";
      display: block;
      clear: both;
@@ -48,47 +52,47 @@
    }
    
    h5{
-     padding: 2%;
-   }
-   
-   /* .bg-image{
+     padding: 2%;}
+
+
+/* .bg-image{
      background-image: url(../images/pexels-olena-bohovyk-3604314.jpg);
      background-size: cover;
      background-position: left;
      height: 95vh;
-   } */
-   
-   /******************************************
-   /* LAYOUT
-   /*******************************************/
-   header {
-   
-   }
-   
-   
-   
-   .container {
-   
-   }
-   
-   .container-fluid {
+} */
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+
+
+.container {
+
+}
+
+.container-fluid {
      
-   }
-   
-   /* Code brings nav bar to the front */
-   .navbar {
+}
+
+/* Code brings nav bar to the front */
+.navbar {
      z-index: 1;
      position: relative;
    }
    
-   
-   footer {
+
+footer {
      width: 100%;
      background-color: black;
      padding: 2rem 0;
-   }
-   
-   .footer-navbar {
+}
+
+.footer-navbar {
      width: 40%;
      align-items: center;
      justify-content: space-between;
@@ -129,7 +133,7 @@
      z-index: 1;
    }
    
-   .jumborton_video {
+.jumborton_video {
      height: 790px;
      width: 100%;
      object-fit: cover;
@@ -145,5 +149,5 @@
      position: absolute;
      height: 790px;
      width: 100%;
-     background-color: rgba(0, 0, 0, 0.3);
+     background-color: rgba(0, 0, 0, 0.4);
    }
