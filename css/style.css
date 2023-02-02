@@ -42,9 +42,6 @@ body {
 
 h1{
      font-size: 90px;
-     margin-top: 60px;
-     margin-left: 60px;
-     color: #ffffff;
 }
 
 
@@ -119,17 +116,12 @@ footer {
      z-index: 1;
    }
    
-   .jumborton_video {
+.jumborton_video {
      height: 790px;
      width: 100%;
      object-fit: cover;
    }
 
-   .jumbotron_form {
-     position: absolute;
-     top: 350px;
-     z-index: 1;
-   }
 
 .jumbotron_overlay {
      position: absolute;
