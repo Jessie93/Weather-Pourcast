@@ -5,6 +5,10 @@
    
    /* Clear fix hack */
    .clearfix:after {
+   }
+   
+   /* Clear fix hack */
+   .clearfix:after {
      content: ".";
      display: block;
      clear: both;
@@ -27,7 +31,6 @@
    
    /* .hide {
      display: none;
-<<<<<<< HEAD
    } */
    
    
@@ -49,57 +52,15 @@
    }
    
    h5{
-     padding: 2%;
-   }
-   
-   /* .bg-image{
-=======
-} */
+     padding: 2%;}
 
 
-
-/******************************************
-/* BASE STYLES
-/*******************************************/
-
-body {
-
-}
-
-
-h1{
-     font-size: 100px;
-}
-
-h5{
-     padding: 2%;
-}
-
-.bg-image{
->>>>>>> main
+/* .bg-image{
      background-image: url(../images/pexels-olena-bohovyk-3604314.jpg);
      background-size: cover;
      background-position: left;
      height: 95vh;
-<<<<<<< HEAD
-   } */
-   
-   /******************************************
-   /* LAYOUT
-   /*******************************************/
-   header {
-   
-   }
-   
-   
-   
-   .container {
-   
-   }
-   
-   .container-fluid {
-=======
-}
+} */
 
 /******************************************
 /* LAYOUT
@@ -115,24 +76,23 @@ header {
 }
 
 .container-fluid {
->>>>>>> main
      
-   }
-   
-   /* Code brings nav bar to the front */
-   .navbar {
+}
+
+/* Code brings nav bar to the front */
+.navbar {
      z-index: 1;
      position: relative;
    }
    
-   
-   footer {
+
+footer {
      width: 100%;
      background-color: black;
      padding: 2rem 0;
-   }
-   
-   .footer-navbar {
+}
+
+.footer-navbar {
      width: 40%;
      align-items: center;
      justify-content: space-between;
@@ -178,7 +138,6 @@ header {
      width: 100%;
      object-fit: cover;
    }
-<<<<<<< HEAD
    
    .jumbotron_form {
      position: absolute;
@@ -187,54 +146,8 @@ header {
    }
    
    .jumbotron_overlay {
-=======
-
-
-.jumbotron_overlay {
->>>>>>> main
      position: absolute;
      height: 790px;
      width: 100%;
      background-color: rgba(0, 0, 0, 0.4);
    }
-<<<<<<< HEAD
-   
-   
-=======
-
-
-/******************************************
-/* MEDIA QUERY
-/*******************************************/
-/* Extra Small devices */
-   @media only screen and (max-width: 600px)  {
-     h1 {
-         font-size: 40px;
-     }
-}
-
-/* Small devices */
-@media only screen and (max-width: 768px) {
-     h1 {
-          font-size: 60px;
-      }
- }
-
-
-/* Medium devices */
-@media only screen and (max-width: 1260px) {
-     h1 {
-          font-size: 70px;
-      }
- }
-
-/* Large devices */
-/* @media only screen and (min-width: 979px) {
-     h1 {
-          font-size: 100px;
-      }
-     }
-
- */
-
->>>>>>> main
