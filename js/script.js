@@ -5,7 +5,7 @@ var instructionsEl = $('#cocktail-instructions')
 
 
 function getFeaturedCocktail() {
-    $.get("https:/www.thecocktaildb.com/api/json/v1/1/random.php", function (response) {
+    $.get("https:/www.thecocktaildb.com/api/json/v1/1/random.php", function (response) {     
         console.log(response);
         console.log(response.drinks[0].strDrinkThumb);
         console.log(response.drinks[0].strDrink);
@@ -34,7 +34,9 @@ function getFeaturedCocktail() {
         if (response.drinks[0].strIngredient8 && response.drinks[0].strIngredient8 !== "null") {
             $('#cocktail-ingridients').append('<li>' + response.drinks[0].strMeasure8 + " - " + response.drinks[0].strIngredient8 + '</li>')
         };
-        $('#cocktail-card').append('<h5>' + "Or enter your postocode to get a suggestion tailored to the weather where you are!" + '</h5>');
+        $('#cocktail-card').append('<h5>' + "Or enter your postcode to get a suggestion tailored to the weather where you are!" + '</h5>');
+
+
 
 
 
@@ -55,7 +57,6 @@ function getFeaturedCocktail() {
 }
 
 getFeaturedCocktail();
-
 
 
 
