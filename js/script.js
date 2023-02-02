@@ -1,9 +1,9 @@
 $(document).ready(function () {
     var cocktailTitleEl = $('#cocktail-title')
     var instructionsEl = $('#cocktail-instructions')
-
-
-
+  
+  
+  
     function getFeaturedCocktail() {
         $.get("https:/www.thecocktaildb.com/api/json/v1/1/random.php", function (response) {
             console.log(response);
@@ -35,11 +35,11 @@ $(document).ready(function () {
                 $('#cocktail-ingridients').append('<li>' + response.drinks[0].strMeasure8 + " - " + response.drinks[0].strIngredient8 + '</li>')
             };
             $('#cocktail-card').append('<h5>' + "Or enter your postocode to get a suggestion tailored to the weather where you are!" + '</h5>');
-
-
-
-
-
+  
+  
+  
+  
+  
             //   if (response.drinks[0].strMeasure1 != "null") {
             //     $('#cocktail-ingredients').append(`<li>${response.drinks[0].strMeasure1} ${response.drinks[0].strIngredient1}</li>`);
             //   }
@@ -49,44 +49,44 @@ $(document).ready(function () {
             //   if (response.drinks[0].strMeasure3 != "null") {
             //     $('#cocktail-ingredients').append(`<li>${response.drinks[0].strMeasure3} ${response.drinks[0].strIngredient3}</li>`);
             //   }
-
-
+  
+  
         
-
+  
         });
     }
-
+  
     getFeaturedCocktail();
-
+  
     /**************************************************
      * Get weather in user's city
     ****************************************************/
-
+  
     var apiKey = "&appid=430a3842b09d883ae73a59e0c1d18fa2"
     var city;
     var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=";
-
+  
     // Build the URL for querying the weather API
     function buildQueryURL() {
         var queryURL = apiURL + city + apiKey;
         return queryURL;   
     }
     console.log("Query URL: " + buildQueryURL());
-
+  
     // Click handler for search city enter button
     $("#search-btn").on("click", function (event) {
         event.preventDefault();
         city = $("#search-input").val();
         queryURL = buildQueryURL();
         
-
+  
         // Make an AJAX call to the openweather API to retrieve data
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
             console.log(response);
-
+  
             // Replace HTML cocktail card div with cocktail suitable for the weather
             function updateCard() {
                 var tempK = response.main.temp;
@@ -98,14 +98,69 @@ $(document).ready(function () {
             }
             updateCard();
         }); 
-
+    
+    });// end of search-btn click event listener
+  
+    
+    $("#fav-btn").on("click", function(event) {
+        getFeaturedCocktail()
+        createElements();
         
+        // Create and append elements in favourite.html for the favourite cocktail
+        function createElements() {
+            // Create elements and assign them to variables
+            var containerEl = $("<div>")
+                .addClass("container");
+            var sectionEl = $("<section>")
+                .addClass("card row flex-row-reverse cocktail-card bg-light");
+            var imageEl = $("<img>")
+                .addClass("col-lg-4 card-img-end img-fluid p-0 cocktail-thumb");
+            var cardBodyEl = $("<div>")
+                .addClass("col-lg-8 card-body");
+            var cardTitleEl = $("<h2>")
+                .addClass("card-title cocktail-title");
+            var cardTextEl = $("<p>")
+                .addClass("card-text cocktail-instructions");
+            var ingredientsListUlEl = $("<ul>")
+                .addClass("list-group-flush cocktail-ingridients");
+            var ingridientItemLiEl = $("<li>")
+                .addClass("ingridient");
+            var delBtnEl = $("<div>")
+                .addClass("btn custom-color")
+                .attr("id", "delBtn");
+  
+            // Append elements to the page
+            $("body").append(containerEl);
+            containerEl.append(sectionEl);
+            sectionEl.append(imageEl, cardBodyEl);
+            cardBodyEl.append(cardTitleEl, cardTextEl, ingredientsListUlEl, delBtnEl);
+            ingredientsListUlEl.append(ingridientItemLiEl);
+  
+            // Function to get data from index.html
+        function getData() {
+           
+        }
+  
+        }
+  
         
-    });// end of click event listener
+    });
         
    
+  
+  }); // end document.ready function
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-}); // end document.ready function
+  
+  
 
 
 
@@ -114,25 +169,3 @@ $(document).ready(function () {
 
 
 
-
-      // cocktailTitleEl.text(response.strDrink.value);
-        //   $(".cocktail-title").text(data.strDrink);
-        //   $(".cocktail-instructions").text(data.strInstructions);
-        //   $(".cocktail-thumb").attr("src", data.strDrinkThumb);
-        //   $(".ingridient").empty();
-        //   $(".ingridient").append("<li>" + data.strIngredient1 + "</li>");
-        //   $(".ingridient").append("<li>" + data.strIngredient2 + "</li>");
-
-/* <section class="card row flex-row-reverse cocktail-card bg-light">
-        <img class="col-lg-4 card-img-end img-fluid p-0 cocktail-thumb" src="images/cocktail-image-example.jpg" />
-        <div class="col-lg-8 card-body">
-            <h2 class="card-title cocktail-title">Cocktail Title</h2>
-            <p class="card-text cocktail-instructions">Intructions for cocktail goes here</p>
-            <ul class="list-group-flush cocktail-ingridients">
-                <li class="ingridient">First ingridient</li>
-                <li class="ingridient">Second ingridient</li>
-            </ul>
-            <button class="btn custom-color" id="faveBtn">Add to favourites</button>
-            <button class="btn custom-color" id="rollAgainBtn">Roll again</button>
-        </div>
-   /* // </section> */
