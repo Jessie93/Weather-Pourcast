@@ -27,6 +27,7 @@
    
    /* .hide {
      display: none;
+<<<<<<< HEAD
    } */
    
    
@@ -52,10 +53,35 @@
    }
    
    /* .bg-image{
+=======
+} */
+
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+
+h1{
+     font-size: 100px;
+}
+
+h5{
+     padding: 2%;
+}
+
+.bg-image{
+>>>>>>> main
      background-image: url(../images/pexels-olena-bohovyk-3604314.jpg);
      background-size: cover;
      background-position: left;
      height: 95vh;
+<<<<<<< HEAD
    } */
    
    /******************************************
@@ -72,6 +98,24 @@
    }
    
    .container-fluid {
+=======
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+
+
+.container {
+
+}
+
+.container-fluid {
+>>>>>>> main
      
    }
    
@@ -129,11 +173,12 @@
      z-index: 1;
    }
    
-   .jumborton_video {
+.jumborton_video {
      height: 790px;
      width: 100%;
      object-fit: cover;
    }
+<<<<<<< HEAD
    
    .jumbotron_form {
      position: absolute;
@@ -142,10 +187,54 @@
    }
    
    .jumbotron_overlay {
+=======
+
+
+.jumbotron_overlay {
+>>>>>>> main
      position: absolute;
      height: 790px;
      width: 100%;
-     background-color: rgba(0, 0, 0, 0.3);
+     background-color: rgba(0, 0, 0, 0.4);
    }
+<<<<<<< HEAD
    
    
+=======
+
+
+/******************************************
+/* MEDIA QUERY
+/*******************************************/
+/* Extra Small devices */
+   @media only screen and (max-width: 600px)  {
+     h1 {
+         font-size: 40px;
+     }
+}
+
+/* Small devices */
+@media only screen and (max-width: 768px) {
+     h1 {
+          font-size: 60px;
+      }
+ }
+
+
+/* Medium devices */
+@media only screen and (max-width: 1260px) {
+     h1 {
+          font-size: 70px;
+      }
+ }
+
+/* Large devices */
+/* @media only screen and (min-width: 979px) {
+     h1 {
+          font-size: 100px;
+      }
+     }
+
+ */
+
+>>>>>>> main

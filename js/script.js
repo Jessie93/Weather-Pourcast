@@ -178,5 +178,13 @@ $(document).ready(function () {
             <button class="btn custom-color" id="faveBtn">Add to favourites</button>
             <button class="btn custom-color" id="rollAgainBtn">Roll again</button>
         </div>
-   /* // </section> */
   
+  
+
+
+
+
+
+
+
+
