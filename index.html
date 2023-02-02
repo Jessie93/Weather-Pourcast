@@ -58,10 +58,10 @@
         </div>
 		<form class="jumbotron_form p-3 form-inline">
 			<div class=" form-group pl-5">
-				<input type="text" class="form-control" placeholder="Enter your location here">
+				<input type="text" class="form-control" id="search-input" placeholder="Enter your location here">
 			</div>
 			<div class="pl-3">
-				<button type="submit" class="btn custom-color">Enter</button>
+				<button type="submit" class="btn custom-color" id="search-btn">Enter</button>
 			</div>
 		</form>
     </div>
@@ -102,13 +102,11 @@
 
 
     <section class="card row flex-row-reverse cocktail-card bg-light">
-        <img class="col-lg-4 card-img-end img-fluid p-0 cocktail-thumb" src="images/cocktail-image-example.jpg" />
-        <div class="col-lg-8 card-body">
-            <h2 class="card-title cocktail-title">Cocktail Title</h2>
-            <p class="card-text cocktail-instructions">Intructions for cocktail goes here</p>
-			<ul class="list-group-flush cocktail-ingridients">
-				<li class="ingridient">First ingridient</li>
-				<li class="ingridient">Second ingridient</li>
+        <img class="col-lg-4 card-img-end img-fluid p-0" id="cocktail-thumb" src=""/>
+        <div class="col-lg-8 card-body" id="cocktail-card">
+            <h2 class="card-title" id="cocktail-title"></h2>
+            <p class="card-text" id="cocktail-instructions"></p>
+			<ul class="list-group-flush" id="cocktail-ingridients">
 			</ul>
 			<button class="btn custom-color" id="faveBtn">Add to favourites</button>
 			<button class="btn custom-color" id="rollAgainBtn">Roll again</button>
@@ -116,31 +114,31 @@
     </section>
 
 
-<footer>
-	<ul class="nav flex-row footer-navbar mx-auto">
-		<li class="nav-item mb-2 footer-nav-item">
-			<a href="#" class="nav-link p-0 text-muted footer-nav-link">
-				Information
-			</a>
-		</li>
-		<li class="nav-item mb-2">
-			<a href="#" class="nav-link p-0 text-muted">
-				Services
-			</a>
-		</li>
-		<li class="nav-item mb-2">
-			<a href="#" class="nav-link p-0 text-muted">
-				Cocktails
-			</a>
-		</li>
-		<li class="nav-item mb-2">
-			<a href="#" class="nav-link p-0 text-muted">
-				Follow Us
-			</a>
-		</li>
-		
-	</ul>
-</footer>		  
+		<footer>
+			<ul class="nav flex-row footer-navbar mx-auto">
+				<li class="nav-item mb-2 footer-nav-item">
+					<a href="https://github.com/Jessie93" target="_blank" class="fooer-nav-link p-0  footer-nav-link">
+						Jessie93
+					</a>
+				</li>
+				<li class="nav-item mb-2">
+					<a href="https://github.com/ladykays" target="_blank" class="footer-nav-link p-0">
+						Ladykays
+					</a>
+				</li>
+				<li class="nav-item mb-2">
+					<a href="https://github.com/ffionerin" target="_blank" class="footer-nav-link p-0">
+						Ffionerin
+					</a>
+				</li>
+				<li class="nav-item mb-2">
+					<a href="https://github.com/Temioye" target="_blank" class="footer-nav-link p-0">
+						Temioye
+					</a>
+				</li>
+				
+			</ul>
+		</footer>		  
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
