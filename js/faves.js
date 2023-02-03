@@ -38,5 +38,7 @@ $("#del-btn").on("click", function () {
     localStorage.clear(); // clear local storage
     window.location.reload(); // clears all favorites
 
-    //TODO: Try to see if you could add more than one favourite cocktail. If you have morre than one cocktail stored to local storage see if you could delete one and let the others remain
+    //TODO: Try to see if you could add more than one favourite cocktail. 
+    //Todo: If you have more than one cocktail stored to local storage see if you could delete one and let the others remain. 
+    //Todo: If this works, delete window.location.reload();
 });
