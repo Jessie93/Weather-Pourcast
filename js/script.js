@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     // Your function goes here
     function getFeaturedCocktail() {
-        $.get("https:/www.thecocktaildb.com/api/json/v1/1/random.php", function (response) {
+        $.get("https://www.thecocktaildb.com/api/json/v1/1/random.php", function (response) {
             console.log(response);
             console.log(response.drinks[0].strDrinkThumb);
             console.log(response.drinks[0].strDrink);
@@ -108,7 +108,7 @@ $("#search-btn").on("click", function (event) {
 
 function getRandomWhiskeyCocktail() {
     console.log();
-    $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Whiskey", function (response) {
+    $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Whiskey", function (response) {
         console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
         console.log(randomIndex)
@@ -116,7 +116,7 @@ function getRandomWhiskeyCocktail() {
         currentCocktail = randomIndex.idDrink;
         getfullWhiskeyCocktail();
         function getfullWhiskeyCocktail() {
-            $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
+            $.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
                 var whiskeyCocktail = response
                 console.log(whiskeyCocktail)
                 console.log(whiskeyCocktail.drinks[0].strDrink);
@@ -144,7 +144,7 @@ function getRandomWhiskeyCocktail() {
 
 function getRandomVodkaCocktail() {
     console.log();
-    $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka", function (response) {
+    $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka", function (response) {
         console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
         console.log(randomIndex)
@@ -152,7 +152,7 @@ function getRandomVodkaCocktail() {
         currentCocktail = randomIndex.idDrink;
         getfullVodkaCocktail();
         function getfullVodkaCocktail() {
-            $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
+            $.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
                 var vodkaCocktail = response
                 console.log(vodkaCocktail)
                 console.log(vodkaCocktail.drinks[0].strDrink);
@@ -180,7 +180,7 @@ function getRandomVodkaCocktail() {
 
 function getRandomGinCocktail() {
     console.log();
-    $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin", function (response) {
+    $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin", function (response) {
         console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
         console.log(randomIndex)
@@ -188,7 +188,7 @@ function getRandomGinCocktail() {
         currentCocktail = randomIndex.idDrink;
         getfullGinCocktail();
         function getfullGinCocktail() {
-            $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
+            $.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
                 var ginCocktail = response
                 console.log(ginCocktail)
                 console.log(ginCocktail.drinks[0].strDrink);
@@ -216,7 +216,7 @@ function getRandomGinCocktail() {
 
 function getRandomRumCocktail() {
     console.log();
-    $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Rum", function (response) {
+    $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Rum", function (response) {
         console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
         console.log(randomIndex)
@@ -224,7 +224,7 @@ function getRandomRumCocktail() {
         currentCocktail = randomIndex.idDrink;
         getfullRumCocktail();
         function getfullRumCocktail() {
-            $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
+            $.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
                 var rumCocktail = response
                 console.log(rumCocktail)
                 console.log(rumCocktail.drinks[0].strDrink);
@@ -252,7 +252,7 @@ function getRandomRumCocktail() {
 
 function getRandomTequilaCocktail() {
     console.log();
-    $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequila", function (response) {
+    $.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequila", function (response) {
         console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
         console.log(randomIndex)
@@ -260,7 +260,7 @@ function getRandomTequilaCocktail() {
         currentCocktail = randomIndex.idDrink;
         getfullTequilaCocktail();
         function getfullTequilaCocktail() {
-            $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
+            $.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
                 var tequilaCocktail = response
                 console.log(tequilaCocktail)
                 console.log(tequilaCocktail.drinks[0].strDrink);
