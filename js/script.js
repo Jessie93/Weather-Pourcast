@@ -454,3 +454,5 @@ $("#faveBtn").on("click", function () {
   // save the data to localStorage
   localStorage.setItem("cocktailData", JSON.stringify(cocktailData));
 });
+
+
