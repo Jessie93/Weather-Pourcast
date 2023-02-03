@@ -409,7 +409,7 @@ function getRandomTequilaCocktail() {
 }
 
 // Get the button:
-let mybutton = document.getElementById("myBtn");
+var mybutton = document.getElementById("myBtn");
 
 window.onscroll = function () {
   scrollFunction();
@@ -441,17 +441,16 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-$('#faveBtn').on('click', function () {
-    $('#save-msg').text("Your cocktail has been saved")
-    // create an object to store the data
-    var cocktailData = {
-        title: cocktailTitleEl.text(),
-        instructions: instructionsEl.text(),
-        image: $('#cocktail-thumb').attr("src"),
-        ingredients: $('#cocktail-ingridients')[0].innerHTML
-    };
-    console.log(cocktailData);
-    // save the data to localStorage
-    localStorage.setItem('cocktailData', JSON.stringify(cocktailData));
-
-})
+$("#faveBtn").on("click", function () {
+  $("#save-msg").text("Your cocktail has been saved");
+  // create an object to store the data
+  var cocktailData = {
+    title: cocktailTitleEl.text(),
+    instructions: instructionsEl.text(),
+    image: $("#cocktail-thumb").attr("src"),
+    ingredients: $("#cocktail-ingridients")[0].innerHTML,
+  };
+  console.log(cocktailData);
+  // save the data to localStorage
+  localStorage.setItem("cocktailData", JSON.stringify(cocktailData));
+});
