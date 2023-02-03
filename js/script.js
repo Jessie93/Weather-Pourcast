@@ -285,3 +285,18 @@ function getRandomTequilaCocktail() {
     })
 
 };
+
+$('#faveBtn').on('click', function () {
+    $('#save-msg').text("Your cocktail has been saved")
+    // create an object to store the data
+    var cocktailData = {
+        title: cocktailTitleEl.text(),
+        instructions: instructionsEl.text(),
+        image: $('#cocktail-thumb').attr("src"),
+        ingredients: $('#cocktail-ingridients')[0].innerHTML
+    };
+    console.log(cocktailData);
+    // save the data to localStorage
+    localStorage.setItem('cocktailData', JSON.stringify(cocktailData));
+
+})
