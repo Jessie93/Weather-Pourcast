@@ -8,12 +8,14 @@ var cardHTML = `
     <div class="card m-2">
         <img src="${cocktailData.image}" class="card-img-top">
         <div class="card-body">
-            <h5 class="card-title">${cocktailData.title}</h5>
+            <h2 class="card-title">${cocktailData.title}</h2>
             <ul class="card-text">
                 ${cocktailData.ingredients}
             </ul>
             <p class="card-text">${cocktailData.instructions}</p>
+            <button class="btn custom-color btn-sm" id="del-btn">Delete</button>
         </div>
+        
     </div>
 `;
 
