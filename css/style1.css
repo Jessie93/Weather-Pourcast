@@ -119,7 +119,7 @@ footer a:hover{
 
 .jumbotron_overlay {
     position: absolute;
-    height: 100%;
+    height: 800px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
@@ -146,20 +146,20 @@ footer a:hover{
 /* MEDIA QUERY
 /*******************************************/
 /* Extra Small devices */
-  @media only screen and (max-width: 600px)  {
+  @media only screen and (max-width: 320px)  {
     h1 {
         font-size: 40px;
     }
 }
 /* Small devices */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
     h1 {
          font-size: 60px;
      }
 }
 
 /* Medium devices */
-@media only screen and (max-width: 1260px) {
+@media only screen and (max-width: 1025px) {
     h1 {
          font-size: 70px;
      }
@@ -172,4 +172,9 @@ footer a:hover{
     }
 */
 
-
+/* 
+Mobile devices – 320px — 480px.
+iPads, Tablets – 481px — 768px.
+Small screens, laptops – 769px — 1024px.
+Desktops, large screens – 1025px — 1200px.
+Extra large screens, TV – 1201px, and more. */
