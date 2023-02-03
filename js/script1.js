@@ -74,3 +74,48 @@ console.log(vodkaCocktail.drinks[0].strDrink)
 // if (response.weather.value = "rain" or "moderate rain" etc.) {
     //     getRandomWhiskeyCocktail
     // }
+
+
+/**************************************************
+ * Get weather in user's city
+ ****************************************************/
+
+var apiKey = "&appid=430a3842b09d883ae73a59e0c1d18fa2"
+var city;
+var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=";
+
+// Build the URL for querying the weather API
+function buildQueryURL() {
+    var queryURL = apiURL + city + apiKey;
+    return queryURL;   
+}
+console.log("Query URL: " + buildQueryURL());
+
+// Click handler for search city enter button
+$("#search-btn").on("click", function (event) {
+    event.preventDefault();
+    city = $("#search-input").val();
+    queryURL = buildQueryURL();
+    
+
+    // Make an AJAX call to the openweather API to retrieve data
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    }).then(function (response) {
+        console.log(response);
+
+        // Replace HTML cocktail card div with cocktail suitable for the weather
+        function updateCard() {
+            var tempK = response.main.temp;
+            var tempC = (tempK - 273.15).toFixed(0); // converts default Kelvin temperature to Celcius
+            var sugestionTitle = $("<h2>")
+                .addClass("sugestion-title")
+                .text("The Tempreature in " + city + " is " + tempC + "°C.");
+            $("#cocktail-card").prepend(sugestionTitle);
+        }
+        updateCard();
+    }); 
+
+});// end of search-btn click event listener
+    
