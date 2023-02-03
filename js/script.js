@@ -2,33 +2,40 @@ var cocktailTitleEl = $('#cocktail-title')
 var instructionsEl = $('#cocktail-instructions')
 
 // function to get a random cocktail on page load and push it onto card
-function getFeaturedCocktail() {
-    $.get("https:/www.thecocktaildb.com/api/json/v1/1/random.php", function (response) {
-        console.log(response);
-        console.log(response.drinks[0].strDrinkThumb);
-        console.log(response.drinks[0].strDrink);
-        cocktailTitleEl.text("Try a " + response.drinks[0].strDrink);
-        instructionsEl.text(response.drinks[0].strInstructions);
-        $('#cocktail-thumb').attr("src", response.drinks[0].strDrinkThumb);
-        console.log(response.drinks[0].strIngredient1);
-        console.log(response.drinks[0].strMeasure1);
-        for (let i = 0; i < 14; i++)
-            if (response.drinks[0][`strIngredient${i}`] && response.drinks[0][`strIngredient${i}`] !== "null") {
-                $('#cocktail-ingridients').append(`<li> ${response.drinks[0][`strIngredient${i}`]}</li>`);
-            } else {
-                $('#cocktail-ingridients').append(" ")
-            };
-        for (let i = 0; i < 14; i++) {
-            if (response.drinks[0][`strMeasure${i}`] && response.drinks[0][`strMeasure${i}`] !== "null") {
-                $('#cocktail-ingridients li').eq(i).prepend(`${response.drinks[0][`strMeasure${i}`]} `);
-            } else {
-                $('#cocktail-ingridients li').eq(i).prepend("")
-            };
-        }
-    })
-};
 
-getFeaturedCocktail();
+$(document).ready(function () {
+
+
+    // Your function goes here
+    function getFeaturedCocktail() {
+        $.get("https:/www.thecocktaildb.com/api/json/v1/1/random.php", function (response) {
+            console.log(response);
+            console.log(response.drinks[0].strDrinkThumb);
+            console.log(response.drinks[0].strDrink);
+            cocktailTitleEl.text("Try a " + response.drinks[0].strDrink);
+            instructionsEl.text(response.drinks[0].strInstructions);
+            $('#cocktail-thumb').attr("src", response.drinks[0].strDrinkThumb);
+            console.log(response.drinks[0].strIngredient1);
+            console.log(response.drinks[0].strMeasure1);
+            for (let i = 0; i < 14; i++)
+                if (response.drinks[0][`strIngredient${i}`] && response.drinks[0][`strIngredient${i}`] !== "null") {
+                    $('#cocktail-ingridients').append(`<li> ${response.drinks[0][`strIngredient${i}`]}</li>`);
+                } else {
+                    $('#cocktail-ingridients').append(" ")
+                };
+            for (let i = 0; i < 14; i++) {
+                if (response.drinks[0][`strMeasure${i}`] && response.drinks[0][`strMeasure${i}`] !== "null") {
+                    $('#cocktail-ingridients li').eq(i).prepend(`${response.drinks[0][`strMeasure${i}`]} `);
+                } else {
+                    $('#cocktail-ingridients li').eq(i).prepend("")
+                };
+            }
+        })
+    };
+
+    getFeaturedCocktail();
+
+});
 
 /**************************************************
  * Get weather in user's city
@@ -66,206 +73,214 @@ $("#search-btn").on("click", function (event) {
         function updateCard() {
             var tempK = response.main.temp;
             var tempC = (tempK - 273.15).toFixed(0); // converts default Kelvin temperature to Celcius
-            var sugestionTitle = $("<h2>")
-                .addClass("sugestion-title")
+            var sugestionTitle = $("<h4>")
+                .addClass("sugestion-title")                
                 .text("The Tempreature in " + city + " is " + tempC + "°C.");
             $("#cocktail-card").prepend(sugestionTitle);
         }
-updateCard();
-runIfStatements();
+        updateCard();
+        function getRightCocktail() {
+            console.log(response.main.temp);
+            if (response.main.temp < 277) {
+                getRandomWhiskeyCocktail()
+            };
+            if (response.main.temp > 276 && response.main.temp < 283) {
+                getRandomVodkaCocktail()
+            }
+            if (response.main.temp > 282 && response.main.temp < 290) {
+                getRandomGinCocktail()
+            }
+            if (response.main.temp > 289 && response.main.temp < 297) {
+                getRandomRumCocktail()
+            }
+            else {getRandomTequillaCocktail()
+            }
+        }
+        getRightCocktail();
     });
-    
-    
-});// end of search-btn click event listener
-
-/**************************************************
- * If statements to run different functions based on temperature
- ****************************************************/
-
-function runIfStatements() {   
-    if (tempC < 4) {
-        getRandomWhiskeyCocktail()
-    };
-    if (tempC > 3 && tempC < 10) {
-        getRandomVodkaCocktail()
-    }
-    if (tempC > 9 && tempC < 18) {
-        getRandomGinCocktail()
-    }
-    if (tempC > 17 && tempC < 25) {
-        getRandomRumCocktail()
-    }
-    else {
-        getRandomTequillaCocktail()
-    };
-}
-
+});
+// end of search-btn click event listener
 
 /**************************************************
  * Functions for different cocktails based on ingridients
  ****************************************************/
 
 function getRandomWhiskeyCocktail() {
+    console.log();
     $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Whiskey", function (response) {
-        console.log(response.drinks);
+        console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
+        console.log(randomIndex)
         console.log(randomIndex.idDrink);
         currentCocktail = randomIndex.idDrink;
+        getfullWhiskeyCocktail();
         function getfullWhiskeyCocktail() {
             $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
                 var whiskeyCocktail = response
                 console.log(whiskeyCocktail)
-                console.log(whiskeyCocktail.drinks[0].strDrink)
+                console.log(whiskeyCocktail.drinks[0].strDrink);
+                cocktailTitleEl.text("Something warming for this cold day? Try " + whiskeyCocktail.drinks[0].strDrink);
+                instructionsEl.text(whiskeyCocktail.drinks[0].strInstructions);
+                $('#cocktail-thumb').attr("src", whiskeyCocktail.drinks[0].strDrinkThumb);
+                for (let i = 0; i < 14; i++)
+                    if (whiskeyCocktail.drinks[0][`strIngredient${i}`] && whiskeyCocktail.drinks[0][`strIngredient${i}`] !== "null") {
+                        $('#cocktail-ingridients').append(`<li> ${whiskeyCocktail.drinks[0][`strIngredient${i}`]}</li>`);
+                    } else {
+                        $('#cocktail-ingridients').append(" ")
+                    };
+                for (let i = 0; i < 14; i++) {
+                    if (whiskeyCocktail.drinks[0][`strMeasure${i}`] && whiskeyCocktail.drinks[0][`strMeasure${i}`] !== "null") {
+                        $('#cocktail-ingridients li').eq(i).prepend(`${whiskeyCocktail.drinks[0][`strMeasure${i}`]} `);
+                    } else {
+                        $('#cocktail-ingridients li').eq(i).prepend("")
+                    };
+                }
             })
         }
-        getfullWhiskeyCocktail();
-        cocktailTitleEl.text("Something warming for this cold day? Try a " + whiskeyCocktail.drinks[0].strDrink);
-        instructionsEl.text(whiskeyCocktail.drinks[0].strInstructions);
-        $('#cocktail-thumb').attr("src", whiskeyCocktail.drinks[0].strDrinkThumb);
-        for (let i = 0; i < 14; i++)
-            if (whiskeyCocktail.drinks[0][`strIngredient${i}`] && whiskeyCocktail.drinks[0][`strIngredient${i}`] !== "null") {
-                $('#cocktail-ingridients').append(`<li> ${whiskeyCocktail.drinks[0][`strIngredient${i}`]}</li>`);
-            } else {
-                $('#cocktail-ingridients').append(" ")
-            };
-        for (let i = 0; i < 14; i++) {
-            if (whiskeyCocktail.drinks[0][`strMeasure${i}`] && whiskeyCocktail.drinks[0][`strMeasure${i}`] !== "null") {
-                $('#cocktail-ingridients li').eq(i).prepend(`${whiskeyCocktail.drinks[0][`strMeasure${i}`]} `);
-            } else {
-                $('#cocktail-ingridients li').eq(i).prepend("")
-            };
-        }
     })
+
 };
 
 function getRandomVodkaCocktail() {
+    console.log();
     $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka", function (response) {
-        console.log(response.drinks);
+        console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
+        console.log(randomIndex)
         console.log(randomIndex.idDrink);
         currentCocktail = randomIndex.idDrink;
+        getfullVodkaCocktail();
         function getfullVodkaCocktail() {
             $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
                 var vodkaCocktail = response
                 console.log(vodkaCocktail)
-                console.log(vodkaCocktail.drinks[0].strDrink)
+                console.log(vodkaCocktail.drinks[0].strDrink);
+                cocktailTitleEl.text("Why not try a " + vodkaCocktail.drinks[0].strDrink + ", perfect for a chilly day");
+                instructionsEl.text(vodkaCocktail.drinks[0].strInstructions);
+                $('#cocktail-thumb').attr("src", vodkaCocktail.drinks[0].strDrinkThumb);
+                for (let i = 0; i < 14; i++)
+                    if (vodkaCocktail.drinks[0][`strIngredient${i}`] && vodkaCocktail.drinks[0][`strIngredient${i}`] !== "null") {
+                        $('#cocktail-ingridients').append(`<li> ${vodkaCocktail.drinks[0][`strIngredient${i}`]}</li>`);
+                    } else {
+                        $('#cocktail-ingridients').append(" ")
+                    };
+                for (let i = 0; i < 14; i++) {
+                    if (vodkaCocktail.drinks[0][`strMeasure${i}`] && vodkaCocktail.drinks[0][`strMeasure${i}`] !== "null") {
+                        $('#cocktail-ingridients li').eq(i).prepend(`${vodkaCocktail.drinks[0][`strMeasure${i}`]} `);
+                    } else {
+                        $('#cocktail-ingridients li').eq(i).prepend("")
+                    };
+                }
             })
         }
-        getfullVodkaCocktail();
-        cocktailTitleEl.text("Something to brighten up this chilly day? Try a " + vodkaCocktail.drinks[0].strDrink);
-        instructionsEl.text(vodkaCocktail.drinks[0].strInstructions);
-        $('#cocktail-thumb').attr("src", vodkaCocktail.drinks[0].strDrinkThumb);
-        for (let i = 0; i < 14; i++)
-            if (vodkaCocktail.drinks[0][`strIngredient${i}`] && vodkaCocktail.drinks[0][`strIngredient${i}`] !== "null") {
-                $('#cocktail-ingridients').append(`<li> ${vodkaCocktail.drinks[0][`strIngredient${i}`]}</li>`);
-            } else {
-                $('#cocktail-ingridients').append(" ")
-            };
-        for (let i = 0; i < 14; i++) {
-            if (vodkaCocktail.drinks[0][`strMeasure${i}`] && vodkaCocktail.drinks[0][`strMeasure${i}`] !== "null") {
-                $('#cocktail-ingridients li').eq(i).prepend(`${vodkaCocktail.drinks[0][`strMeasure${i}`]} `);
-            } else {
-                $('#cocktail-ingridients li').eq(i).prepend("")
-            };
-        }
     })
+
 };
 
 function getRandomGinCocktail() {
+    console.log();
     $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin", function (response) {
-        console.log(response.drinks);
+        console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
+        console.log(randomIndex)
         console.log(randomIndex.idDrink);
         currentCocktail = randomIndex.idDrink;
+        getfullGinCocktail();
         function getfullGinCocktail() {
             $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
                 var ginCocktail = response
                 console.log(ginCocktail)
-                console.log(ginCocktail.drinks[0].strDrink)
+                console.log(ginCocktail.drinks[0].strDrink);
+                cocktailTitleEl.text("Liven up this dull day with a " + ginCocktail.drinks[0].strDrink);
+                instructionsEl.text(ginCocktail.drinks[0].strInstructions);
+                $('#cocktail-thumb').attr("src", ginCocktail.drinks[0].strDrinkThumb);
+                for (let i = 0; i < 14; i++)
+                    if (ginCocktail.drinks[0][`strIngredient${i}`] && ginCocktail.drinks[0][`strIngredient${i}`] !== "null") {
+                        $('#cocktail-ingridients').append(`<li> ${ginCocktail.drinks[0][`strIngredient${i}`]}</li>`);
+                    } else {
+                        $('#cocktail-ingridients').append(" ")
+                    };
+                for (let i = 0; i < 14; i++) {
+                    if (ginCocktail.drinks[0][`strMeasure${i}`] && ginCocktail.drinks[0][`strMeasure${i}`] !== "null") {
+                        $('#cocktail-ingridients li').eq(i).prepend(`${ginCocktail.drinks[0][`strMeasure${i}`]} `);
+                    } else {
+                        $('#cocktail-ingridients li').eq(i).prepend("")
+                    };
+                }
             })
         }
-        getfullGinCocktail();
-        cocktailTitleEl.text("On this dull day, try a " + ginCocktail.drinks[0].strDrink);
-        instructionsEl.text(ginCocktail.drinks[0].strInstructions);
-        $('#cocktail-thumb').attr("src", ginCocktail.drinks[0].strDrinkThumb);
-        for (let i = 0; i < 14; i++)
-            if (ginCocktail.drinks[0][`strIngredient${i}`] && ginCocktail.drinks[0][`strIngredient${i}`] !== "null") {
-                $('#cocktail-ingridients').append(`<li> ${ginCocktail.drinks[0][`strIngredient${i}`]}</li>`);
-            } else {
-                $('#cocktail-ingridients').append(" ")
-            };
-        for (let i = 0; i < 14; i++) {
-            if (ginCocktail.drinks[0][`strMeasure${i}`] && ginCocktail.drinks[0][`strMeasure${i}`] !== "null") {
-                $('#cocktail-ingridients li').eq(i).prepend(`${ginCocktail.drinks[0][`strMeasure${i}`]} `);
-            } else {
-                $('#cocktail-ingridients li').eq(i).prepend("")
-            };
-        }
     })
+
 };
 
 function getRandomRumCocktail() {
+    console.log();
     $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Rum", function (response) {
-        console.log(response.drinks);
+        console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
+        console.log(randomIndex)
         console.log(randomIndex.idDrink);
         currentCocktail = randomIndex.idDrink;
+        getfullRumCocktail();
         function getfullRumCocktail() {
-            $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
+            $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=Rum" + currentCocktail, function (response) {
                 var rumCocktail = response
                 console.log(rumCocktail)
-                console.log(rumCocktail.drinks[0].strDrink)
+                console.log(rumCocktail.drinks[0].strDrink);
+                cocktailTitleEl.text("Something cool on this warm day? Try " + rumCocktail.drinks[0].strDrink);
+                instructionsEl.text(rumCocktail.drinks[0].strInstructions);
+                $('#cocktail-thumb').attr("src", rumCocktail.drinks[0].strDrinkThumb);
+                for (let i = 0; i < 14; i++)
+                    if (rumCocktail.drinks[0][`strIngredient${i}`] && rumCocktail.drinks[0][`strIngredient${i}`] !== "null") {
+                        $('#cocktail-ingridients').append(`<li> ${rumCocktail.drinks[0][`strIngredient${i}`]}</li>`);
+                    } else {
+                        $('#cocktail-ingridients').append(" ")
+                    };
+                for (let i = 0; i < 14; i++) {
+                    if (runCocktail.drinks[0][`strMeasure${i}`] && rumCocktail.drinks[0][`strMeasure${i}`] !== "null") {
+                        $('#cocktail-ingridients li').eq(i).prepend(`${rumCocktail.drinks[0][`strMeasure${i}`]} `);
+                    } else {
+                        $('#cocktail-ingridients li').eq(i).prepend("")
+                    };
+                }
             })
         }
-        getfullRumCocktail();
-        cocktailTitleEl.text("Something to suit this warm day? Try a " + rumCocktail.drinks[0].strDrink);
-        instructionsEl.text(rumCocktail.drinks[0].strInstructions);
-        $('#cocktail-thumb').attr("src", rumCocktail.drinks[0].strDrinkThumb);
-        for (let i = 0; i < 14; i++)
-            if (rumCocktail.drinks[0][`strIngredient${i}`] && rumCocktail.drinks[0][`strIngredient${i}`] !== "null") {
-                $('#cocktail-ingridients').append(`<li> ${rumCocktail.drinks[0][`strIngredient${i}`]}</li>`);
-            } else {
-                $('#cocktail-ingridients').append(" ")
-            };
-        for (let i = 0; i < 14; i++) {
-            if (rumCocktail.drinks[0][`strMeasure${i}`] && rumCocktail.drinks[0][`strMeasure${i}`] !== "null") {
-                $('#cocktail-ingridients li').eq(i).prepend(`${rumCocktail.drinks[0][`strMeasure${i}`]} `);
-            } else {
-                $('#cocktail-ingridients li').eq(i).prepend("")
-            };
-        }
     })
+
 };
 
 function getRandomTequillaCocktail() {
+    console.log();
     $.get("https:/www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequilla", function (response) {
-        console.log(response.drinks);
+        console.log(response);
         var randomIndex = response.drinks[Math.floor(Math.random() * response.drinks.length)];
+        console.log(randomIndex)
         console.log(randomIndex.idDrink);
         currentCocktail = randomIndex.idDrink;
+        getfullTequillaCocktail();
         function getfullTequillaCocktail() {
             $.get("https:/www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + currentCocktail, function (response) {
                 var tequillaCocktail = response
                 console.log(tequillaCocktail)
-                console.log(tequillaCocktail.drinks[0].strDrink)
+                console.log(tequillaCocktail.drinks[0].strDrink);
+                cocktailTitleEl.text("Cool off in this hot weather with a " + tequillaCocktail.drinks[0].strDrink);
+                instructionsEl.text(tequillaCocktail.drinks[0].strInstructions);
+                $('#cocktail-thumb').attr("src", tequillaCocktail.drinks[0].strDrinkThumb);
+                for (let i = 0; i < 14; i++)
+                    if (tequillaCocktail.drinks[0][`strIngredient${i}`] && tequillaCocktail.drinks[0][`strIngredient${i}`] !== "null") {
+                        $('#cocktail-ingridients').append(`<li> ${tequillaCocktail.drinks[0][`strIngredient${i}`]}</li>`);
+                    } else {
+                        $('#cocktail-ingridients').append(" ")
+                    };
+                for (let i = 0; i < 14; i++) {
+                    if (tequillaCocktail.drinks[0][`strMeasure${i}`] && tequillaCocktail.drinks[0][`strMeasure${i}`] !== "null") {
+                        $('#cocktail-ingridients li').eq(i).prepend(`${tequillaCocktail.drinks[0][`strMeasure${i}`]} `);
+                    } else {
+                        $('#cocktail-ingridients li').eq(i).prepend("")
+                    };
+                }
             })
         }
-        getfullTequillaCocktail();
-        cocktailTitleEl.text("On this hot day, try a " + tequillaCocktail.drinks[0].strDrink);
-        instructionsEl.text(tequillaCocktail.drinks[0].strInstructions);
-        $('#cocktail-thumb').attr("src", tequillaCocktail.drinks[0].strDrinkThumb);
-        for (let i = 0; i < 14; i++)
-            if (tequillaCocktail.drinks[0][`strIngredient${i}`] && tequillaCocktail.drinks[0][`strIngredient${i}`] !== "null") {
-                $('#cocktail-ingridients').append(`<li> ${tequillaCocktail.drinks[0][`strIngredient${i}`]}</li>`);
-            } else {
-                $('#cocktail-ingridients').append(" ")
-            };
-        for (let i = 0; i < 14; i++) {
-            if (tequillaCocktail.drinks[0][`strMeasure${i}`] && tequillaCocktail.drinks[0][`strMeasure${i}`] !== "null") {
-                $('#cocktail-ingridients li').eq(i).prepend(`${tequillaCocktail.drinks[0][`strMeasure${i}`]} `);
-            } else {
-                $('#cocktail-ingridients li').eq(i).prepend("")
-            };
-        }
     })
+
 };
