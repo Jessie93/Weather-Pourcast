@@ -427,3 +427,31 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+$('#faveBtn').on('click', function () {
+    $('#save-msg').text("Your cocktail has been saved")
+    // create an object to store the data
+    var cocktailData = {
+        title: cocktailTitleEl.text(),
+        instructions: instructionsEl.text(),
+        image: $('#cocktail-thumb').attr("src"),
+        ingredients: $('#cocktail-ingridients')[0].innerHTML
+    };
+    console.log(cocktailData);
+    // save the data to localStorage
+    localStorage.setItem('cocktailData', JSON.stringify(cocktailData));
+
+})
