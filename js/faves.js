@@ -49,9 +49,9 @@ var cocktailDataArray = JSON.parse(localStorage.getItem("cocktailData")) || [];
 console.log(cocktailDataArray);
 
 // show only the first 5 favorites
-var numFave = cocktailDataArray.length > 5 ? 5 : cocktailDataArray.length;
+//var numFave = cocktailDataArray.length > 5 ? 5 : cocktailDataArray.length; //uncomment this if we decide to show a maximum number of favourites
 
-for (var i = 0; i < numFave; i++) {
+for (var i = 0; i < cocktailDataArray.length; i++) { //change cocktailDataArray.length to numFave if u uncomment the above
   // create the card
   var cardHTML = `
     <div class="card m-2">
@@ -67,7 +67,7 @@ for (var i = 0; i < numFave; i++) {
   `;
 
   // append the card to the #favorites-container
-  $("#favorites-container").append(cardHTML);
+  $("#favorites-container").prepend(cardHTML);
 }
 
 // create a delete buttton and append it to cardHTML
@@ -109,7 +109,5 @@ $(".del-btn").on("click", function (event) {
 
 
 
-    //TODO: Try to see if you could add more than one favourite cocktail. 
-    //Todo: If you have more than one cocktail stored to local storage see if you could delete one and let the others remain. 
-    //Todo: If this works, delete window.location.reload();
+    
 }); 
