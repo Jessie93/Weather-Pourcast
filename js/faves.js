@@ -45,7 +45,7 @@ $("#del-btn").on("click", function () {
 
 
 // retrieve the data from localStorage
-var cocktailDataArray = JSON.parse(localStorage.getItem('cocktailData')) || [];
+var cocktailDataArray = JSON.parse(localStorage.getItem("cocktailData")) || [];
 console.log(cocktailDataArray);
 
 // show only the first 5 favorites
@@ -82,10 +82,18 @@ delBtn.text("Delete");
 
 // Click handler for delete button 
 $(".del-btn").on("click", function (event) {
-    //localStorage.clear(); // clear local storage
+    /* //localStorage.clear(); // clear local storage
     event.target.localStorage.clear();
     event.target.cardHTML.remove();
-    //window.location.reload(); // clears all favorites
+    //window.location.reload(); // clears all favorites */
+
+    cocktailDataArray = JSON.parse(localStorage.getItem("cocktailData") || []);
+    var index = $(".del-btn").index(this);
+    cocktailDataArray.splice(index, 1);
+    localStorage.setItem("cocktailData", JSON.stringify(cocktailDataArray));
+    console.log(cocktailDataArray);
+    $(this).parent(".card").remove();
+    //$(this).localStorage.removeItem(); // This line produces an error
 
     //TODO: Try to see if you could add more than one favourite cocktail. 
     //Todo: If you have more than one cocktail stored to local storage see if you could delete one and let the others remain. 
