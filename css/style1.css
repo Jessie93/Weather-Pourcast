@@ -35,6 +35,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 
 h1{
     font-size: 100px;
+    color: #371311;
 }
 
 h2{
@@ -159,8 +160,13 @@ footer a:hover{
     
 }
 
-#del-btn {
-    width: 5%
+.del-btn {
+    width: 20%   
+    
+}
+
+.del-btn:hover {
+    background-color: #555;
 }
 
 
