@@ -8,3 +8,8 @@ Website that provide users with a unique experience by offering cocktail recomme
 ## Screenshot
 
 ## Deployed Page
+
+## Credits
+* https://blog.logrocket.com/localstorage-javascript-complete-guide/
+* https://technosmarter.com/qa/1031/how-to-remove-or-delete-div-block-on-button-click-using-jquery
+

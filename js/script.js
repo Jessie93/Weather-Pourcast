@@ -441,7 +441,10 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-$("#faveBtn").on("click", function () {
+/*******************************************
+ * Click event for "Add to favorites" button
+ ********************************************/
+/* $("#faveBtn").on("click", function () {
   $("#save-msg").text("Your cocktail has been saved");
   // create an object to store the data
   var cocktailData = {
@@ -453,4 +456,24 @@ $("#faveBtn").on("click", function () {
   console.log(cocktailData);
   // save the data to localStorage
   localStorage.setItem("cocktailData", JSON.stringify(cocktailData));
+}); */
+
+$("#faveBtn").on("click", function () {
+  $("#save-msg").text("Your cocktail has been saved");
+  // create an object to store the data
+  var cocktailData = {
+    title: cocktailTitleEl.text(),
+    instructions: instructionsEl.text(),
+    image: $("#cocktail-thumb").attr("src"),
+    ingredients: $("#cocktail-ingridients")[0].innerHTML,
+  };
+  console.log(cocktailData);
+  // get existing data from local storage incase there are favorites stored
+  var cocktailDataArray = JSON.parse(localStorage.getItem('cocktailData')) || [];
+  // add new data to the array
+  cocktailDataArray.push(cocktailData);
+  // save the updated array to localStorage
+  localStorage.setItem("cocktailData", JSON.stringify(cocktailDataArray));
 });
+
+
