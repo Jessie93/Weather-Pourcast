@@ -99,6 +99,8 @@ $(document).ready(function () {
         $(this).val("");
       });
 
+      
+
         
 
       function getRightCocktail() {
@@ -121,8 +123,15 @@ $(document).ready(function () {
       }
       getRightCocktail();
     });
-  });
-  // end of search-btn click event listener
+  }); // end of search-btn click event listener
+
+  // Event handler for tapping the enter button on the keyboard
+  $("#search-input").on('keyup', function (event) {
+    if (event.key === "Enter" || event.keyCode === 13) { //event.keyCode is depreciated. Left here to support older browsers
+        event.preventDefault();
+        $("#search-btn").click();
+    }
+  }); 
 
   /**************************************************
    * Functions for different cocktails based on ingridients
