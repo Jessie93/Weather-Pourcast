@@ -82,12 +82,28 @@ $(document).ready(function () {
       function updateCard() {
         var tempK = response.main.temp;
         var tempC = (tempK - 273.15).toFixed(0); // converts default Kelvin temperature to Celcius
-        var sugestionTitle = $("<h4>")
-          .addClass("sugestion-title")
+        var weather = $("<h4>")
+          .addClass("weather")
           .text("The Tempreature in " + city + " is " + tempC + "°C.");
-        $("#cocktail-card").prepend(sugestionTitle);
-      }
+          $("#cocktail-card").prepend(weather);
+
+          //TODO: Trying to use the replaceWith() method to get the h4 content to be replaced with that of a new city. Not working as expected yet. Uncomment to work on it
+        /* var newWeather = $("<h4>")
+          .addClass("newWeather")
+          .text("The Tempreature in " + city + " is " + tempC + "°C.");
+        
+        
+        $("#cocktail-card").prepend(weather);
+         if (weather === "") {
+          $("#cocktail-card").prepend(weather);
+        }  else {
+          $(weather).replaceWith(newWeather);
+        }    */
+        
+      } // end function updateCard
       updateCard();
+      
+
       function getRightCocktail() {
         console.log(response.main.temp);
         if (response.main.temp < 277) {
@@ -464,7 +480,7 @@ $(document).ready(function () {
     localStorage.setItem("cocktailData", JSON.stringify(cocktailDataArray));
   }); // end Add to favourite event handler
 
-  
+
   /*********************************************
    * Roll again button event handler
    * ********************************************/
