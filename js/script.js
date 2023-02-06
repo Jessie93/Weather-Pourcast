@@ -85,24 +85,18 @@ $(document).ready(function () {
         var weather = $("<h4>")
           .addClass("weather")
           .text("The Tempreature in " + city + " is " + tempC + "°C.");
-          $("#cocktail-card").prepend(weather);
+          console.log(weather);
 
-          //TODO: Trying to use the replaceWith() method to get the h4 content to be replaced with that of a new city. Not working as expected yet. Uncomment to work on it
-        /* var newWeather = $("<h4>")
-          .addClass("newWeather")
-          .text("The Tempreature in " + city + " is " + tempC + "°C.");
-        
-        
-        $("#cocktail-card").prepend(weather);
-         if (weather === "") {
-          $("#cocktail-card").prepend(weather);
-        }  else {
-          $(weather).replaceWith(newWeather);
-        }    */
+         // Empty out the div before adding the weather for the new city
+         $(".weather-div").empty();
+         $(".weather-div").append(weather);   
         
       } // end function updateCard
       updateCard();
       
+      
+
+        
 
       function getRightCocktail() {
         console.log(response.main.temp);
