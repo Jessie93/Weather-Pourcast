@@ -94,7 +94,10 @@ $(document).ready(function () {
       } // end function updateCard
       updateCard();
       
-      
+      // Click handler to clear form when user clicks in the search field
+      $("#search-input").on("click", function () {
+        $(this).val("");
+      });
 
         
 
