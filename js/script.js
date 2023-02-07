@@ -68,6 +68,7 @@ $(document).ready(function () {
   // Click handler for search city enter button
   $("#search-btn").on("click", function (event) {
     event.preventDefault();
+    $("#cocktail-ingridients").empty();
     city = $("#search-input").val();
     queryURL = buildQueryURL();
 
