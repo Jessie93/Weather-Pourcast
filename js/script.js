@@ -469,7 +469,10 @@ $(document).ready(function () {
    * Click event for "Add to favorites" button
    ********************************************/
   $("#faveBtn").on("click", function () {
-    $("#save-msg").text("Your cocktail has been saved");
+    $("#save-msg").text("Your cocktail has been saved");   
+    setTimeout(function(){
+      $("#save-msg").text("");
+    }, 2000);   
     // create an object to store the data
     var cocktailData = {
       title: cocktailTitleEl.text(),
@@ -491,6 +494,8 @@ $(document).ready(function () {
    * Roll again button event handler
    * ********************************************/
   $("#rollAgainBtn").on("click", function() {
+    $("#cocktail-ingridients").empty();
+    
     getFeaturedCocktail();
   }); // end Roll again button event handler
 
