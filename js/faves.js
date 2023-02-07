@@ -105,7 +105,7 @@ $(".del-btn").on("click", function (event) {
     var index = $(".del-btn").index(this); // get the index of the delete button element
     cocktailDataArray.splice(index, 1);
     localStorage.setItem("cocktailData", JSON.stringify(cocktailDataArray));
-    $(this).closest(".card").remove(); //remove the closest parent with a class of "card"
+    $(this).closest(".cardfav").remove(); //remove the closest parent with a class of "card"
 
 
 
