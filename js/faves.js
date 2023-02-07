@@ -54,7 +54,7 @@ console.log(cocktailDataArray);
 for (var i = 0; i < cocktailDataArray.length; i++) { //change cocktailDataArray.length to numFave if u uncomment the above
   // create the card
   var cardHTML = `
-    <div class="card row flex-row mb0">
+    <div class="cardfav row flex-row mb-5 p-5 bg-light shadow p-3 mb-5 bg-white rounded">
       <img src="${cocktailDataArray[i].image}" class="col-lg-5 card-img-top fav-cocktail-thumb">
       <div class="card-body col-lg-6 ml-5 fav-cocktail-card" style="text-align: left;" >
         <h2 class="card-title fav-cocktail-title" >${cocktailDataArray[i].title}</h2>
