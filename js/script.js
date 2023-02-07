@@ -494,6 +494,8 @@ $(document).ready(function () {
    * Roll again button event handler
    * ********************************************/
   $("#rollAgainBtn").on("click", function() {
+    $("#cocktail-ingridients").empty();
+    
     getFeaturedCocktail();
   }); // end Roll again button event handler
 
