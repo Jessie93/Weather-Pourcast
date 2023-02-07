@@ -127,8 +127,8 @@ $(document).ready(function () {
   }); // end of search-btn click event listener
 
   // Event handler for tapping the enter button on the keyboard
-  $("#search-input").on('keyup', function (event) {
-    if (event.key === "Enter" || event.keyCode === 13) { //event.keyCode is depreciated. Left here to support older browsers
+  $("#search-input").on('keydown', function (event) {
+    if (event.key === "Enter"/*  || event.keyCode === 13 */) { //event.keyCode is depreciated. Left here to support older browsers
         event.preventDefault();
         $("#search-btn").click();
     }
