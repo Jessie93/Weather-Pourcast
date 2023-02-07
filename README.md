@@ -1,13 +1,35 @@
-# project-one
-Website that provide users with a unique experience by offering cocktail recommendations based on the weather in their location.
+# Weather Pourcast
 
 ## Description
+We've created a website that provides users with a unique experience by offering cocktail recommendations based on the temperature at their location. After a user enters their town or city, we'll suggest the perfect drink. Features include:
+* Modal to check whether users are 18 on page load
+* A random cocktail suggested on page load including name, picture, ingridients and instructions
+* Input section for users to enter their town or city
+* Integration of OpenWeather API to check the temperature in the location entered
+* Integration of TheCocktailDB API to access hundreds of cocktails
+* Feedback regarding the temperature at the user's location
+* A cocktail is suggested with an appropriate base ingridient (whisky, rum, gin, vodka, or tequilla) for the temperature
+* The ability for users to add cocktails to their favourites - these are added to local storage and disaplayed on their 'Favourites' page
+* A navbar for easy navigation between main and favourites page, as well as a "back to the top" button
 
 ## Technologies Used
 
-## Screenshot
+* HTML
+* CSS
+* Javascript
+* Bootstrap 4.3
+* JQuery 3.5
+* Git
+* Github
+
+## Screenshots
+
+![Screenshot of home page]()
+![Screenshot of favourites page]()
 
 ## Deployed Page
+
+https://jessie93.github.io/Weather-Pourcast/
 
 ## Credits
 * https://blog.logrocket.com/localstorage-javascript-complete-guide/

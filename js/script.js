@@ -14,7 +14,7 @@ $(document).ready(function () {
           console.log(response);
           console.log(response.drinks[0].strDrinkThumb);
           console.log(response.drinks[0].strDrink);
-          cocktailTitleEl.text("Try a " + response.drinks[0].strDrink);
+          cocktailTitleEl.text("Try a glass of " + response.drinks[0].strDrink);
           instructionsEl.text(response.drinks[0].strInstructions);
           $("#cocktail-thumb").attr("src", response.drinks[0].strDrinkThumb);
           console.log(response.drinks[0].strIngredient1);
@@ -158,7 +158,7 @@ $(document).ready(function () {
               console.log(whiskeyCocktail);
               console.log(whiskeyCocktail.drinks[0].strDrink);
               cocktailTitleEl.text(
-                "Something warming for this cold day? Try " +
+                "Something warming for this cold day? Try a glass of " +
                   whiskeyCocktail.drinks[0].strDrink
               );
               instructionsEl.text(whiskeyCocktail.drinks[0].strInstructions);
@@ -217,7 +217,7 @@ $(document).ready(function () {
               console.log(vodkaCocktail);
               console.log(vodkaCocktail.drinks[0].strDrink);
               cocktailTitleEl.text(
-                "Why not try a " +
+                "Why not try a glass of " +
                   vodkaCocktail.drinks[0].strDrink +
                   ", perfect for a chilly day"
               );
@@ -277,7 +277,7 @@ $(document).ready(function () {
               console.log(ginCocktail);
               console.log(ginCocktail.drinks[0].strDrink);
               cocktailTitleEl.text(
-                "Liven up this dull day with a " + ginCocktail.drinks[0].strDrink
+                "Brighten up this mild day with a glass of " + ginCocktail.drinks[0].strDrink
               );
               instructionsEl.text(ginCocktail.drinks[0].strInstructions);
               $("#cocktail-thumb").attr(
@@ -335,7 +335,7 @@ $(document).ready(function () {
               console.log(rumCocktail);
               console.log(rumCocktail.drinks[0].strDrink);
               cocktailTitleEl.text(
-                "Something cool on this warm day? Try " +
+                "Something cool on this warm day? Try a glass of " +
                   rumCocktail.drinks[0].strDrink
               );
               instructionsEl.text(rumCocktail.drinks[0].strInstructions);
