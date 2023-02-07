@@ -54,7 +54,7 @@ console.log(cocktailDataArray);
 for (var i = 0; i < cocktailDataArray.length; i++) { //change cocktailDataArray.length to numFave if u uncomment the above
   // create the card
   var cardHTML = `
-    <div class="card row flex-row mb0">
+    <div class="cardfav row flex-row mb-5 p-5 bg-light shadow p-3 mb-5 bg-white rounded">
       <img src="${cocktailDataArray[i].image}" class="col-lg-5 card-img-top fav-cocktail-thumb">
       <div class="card-body col-lg-6 ml-5 fav-cocktail-card" style="text-align: left;" >
         <h2 class="card-title fav-cocktail-title" >${cocktailDataArray[i].title}</h2>
@@ -105,7 +105,7 @@ $(".del-btn").on("click", function (event) {
     var index = $(".del-btn").index(this); // get the index of the delete button element
     cocktailDataArray.splice(index, 1);
     localStorage.setItem("cocktailData", JSON.stringify(cocktailDataArray));
-    $(this).closest(".card").remove(); //remove the closest parent with a class of "card"
+    $(this).closest(".cardfav").remove(); //remove the closest parent with a class of "card"
 
 
 
