@@ -34,7 +34,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 }
 
 h1{
-    font-size: 100px;
+    font-size: 80px;
     color: #371311;
 }
 
@@ -127,6 +127,9 @@ footer a:hover{
     background-color: rgba(0, 0, 0, 0.4);
   }
 
+  .cardfav h2{
+    font-size: 50px;
+  }
 
 
 /* Cocktail Card */
@@ -196,17 +199,13 @@ footer a:hover{
 /* MEDIA QUERY
 /*******************************************/
 /* Extra Small devices */
-  /* @media only screen and (max-width: 320px)  {
+  /* @media only screen and (max-width: 575px)  {
     h1 {
-        font-size: 40px;
+        font-size: 50px;
     }
 
-    #favorites-container .col-lg-5 {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
 
-    .del-btn {
+.del-btn {
         width: 70%;  
         white-space: nowrap;
         padding-left: 0.25;
@@ -214,59 +213,65 @@ footer a:hover{
     }
 } */
 
-/* Small devices */
+
+/* Medium devices */
 /* @media only screen and (max-width: 769px) {
     h1 {
          font-size: 60px;
      }
 
-     #favorites-container .col-lg-5 {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .fav-cocktail-title {
-        font-size: 30px;
-    }
-    
-} */
-
-/* Medium devices */
-/* @media only screen and (max-width: 1025px) {
-    h1 {
-         font-size: 70px;
-     }
-
-     #favorites-container .col-lg-5 {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .fav-cocktail-title {
-        font-size: 40px;
-    }
 } */
 
 /* Large devices */
-/* @media only screen and (min-width: 992px) {
-    #favorites-container .col-lg-5 {
-        padding-left: 0;
-    }
-} */
-
-
-@media (max-width: 767px) {
+/* @media only screen and (max-width: 992px) {
     h1 {
-      font-size: 50px;
+        font-size: 70px;
     }
-    .jumbotron_content {
-      top: 100px;
+
+}  */
+
+
+/* styles for small screens */
+@media only screen and (max-width: 767px) {
+  .jumbotron_content {
+    h-100 container-xxl {
+      padding: 1rem;
     }
-    .jumborton_video {
-      height: 600px;
+    h1 {
+      font-size: 1.5rem;
     }
-    .jumbotron_overlay {
-      height: 600px;
+    p {
+      font-size: 0.9rem;
     }
   }
-  
+}
+
+/* styles for medium screens */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .jumbotron_content {
+    h-100 container-xxl {
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/* styles for large screens */
+@media only screen and (min-width: 992px) {
+  .jumbotron_content {
+    h-100 container-xxl {
+      padding: 3rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
