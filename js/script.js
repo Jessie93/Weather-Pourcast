@@ -1,53 +1,54 @@
 $(document).ready(function () {
+  $("#myModal").modal("show");
+});
 
+$(document).ready(function () {
   var cocktailTitleEl = $("#cocktail-title");
   var instructionsEl = $("#cocktail-instructions");
 
   // function to get a random cocktail on page load and push it onto card
 
-
-    // Your function goes here
-    function getFeaturedCocktail() {
-      $.get(
-        "https://www.thecocktaildb.com/api/json/v1/1/random.php",
-        function (response) {
-          console.log(response);
-          console.log(response.drinks[0].strDrinkThumb);
-          console.log(response.drinks[0].strDrink);
-          cocktailTitleEl.text("Try a glass of " + response.drinks[0].strDrink);
-          instructionsEl.text(response.drinks[0].strInstructions);
-          $("#cocktail-thumb").attr("src", response.drinks[0].strDrinkThumb);
-          console.log(response.drinks[0].strIngredient1);
-          console.log(response.drinks[0].strMeasure1);
-          for (let i = 0; i < 14; i++)
-            if (
-              response.drinks[0][`strIngredient${i}`] &&
-              response.drinks[0][`strIngredient${i}`] !== "null"
-            ) {
-              $("#cocktail-ingridients").append(
-                `<li> ${response.drinks[0][`strIngredient${i}`]}</li>`
-              );
-            } else {
-              $("#cocktail-ingridients").append(" ");
-            }
-          for (let i = 0; i < 14; i++) {
-            if (
-              response.drinks[0][`strMeasure${i}`] &&
-              response.drinks[0][`strMeasure${i}`] !== "null"
-            ) {
-              $("#cocktail-ingridients li")
-                .eq(i)
-                .prepend(`${response.drinks[0][`strMeasure${i}`]} `);
-            } else {
-              $("#cocktail-ingridients li").eq(i).prepend("");
-            }
+  // Your function goes here
+  function getFeaturedCocktail() {
+    $.get(
+      "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+      function (response) {
+        console.log(response);
+        console.log(response.drinks[0].strDrinkThumb);
+        console.log(response.drinks[0].strDrink);
+        cocktailTitleEl.text("Try a glass of " + response.drinks[0].strDrink);
+        instructionsEl.text(response.drinks[0].strInstructions);
+        $("#cocktail-thumb").attr("src", response.drinks[0].strDrinkThumb);
+        console.log(response.drinks[0].strIngredient1);
+        console.log(response.drinks[0].strMeasure1);
+        for (let i = 0; i < 14; i++)
+          if (
+            response.drinks[0][`strIngredient${i}`] &&
+            response.drinks[0][`strIngredient${i}`] !== "null"
+          ) {
+            $("#cocktail-ingridients").append(
+              `<li> ${response.drinks[0][`strIngredient${i}`]}</li>`
+            );
+          } else {
+            $("#cocktail-ingridients").append(" ");
+          }
+        for (let i = 0; i < 14; i++) {
+          if (
+            response.drinks[0][`strMeasure${i}`] &&
+            response.drinks[0][`strMeasure${i}`] !== "null"
+          ) {
+            $("#cocktail-ingridients li")
+              .eq(i)
+              .prepend(`${response.drinks[0][`strMeasure${i}`]} `);
+          } else {
+            $("#cocktail-ingridients li").eq(i).prepend("");
           }
         }
-      );
-    }
+      }
+    );
+  }
 
-    getFeaturedCocktail();
-
+  getFeaturedCocktail();
 
   /**************************************************
    * Get weather in user's city
@@ -86,23 +87,18 @@ $(document).ready(function () {
         var weather = $("<h4>")
           .addClass("weather")
           .text("The Tempreature in " + city + " is " + tempC + "°C.");
-          console.log(weather);
+        console.log(weather);
 
-         // Empty out the div before adding the weather for the new city
-         $(".weather-div").empty();
-         $(".weather-div").append(weather);   
-        
+        // Empty out the div before adding the weather for the new city
+        $(".weather-div").empty();
+        $(".weather-div").append(weather);
       } // end function updateCard
       updateCard();
-      
+
       // Click handler to clear form when user clicks in the search field
       $("#search-input").on("click", function () {
         $(this).val("");
       });
-
-      
-
-        
 
       function getRightCocktail() {
         console.log(response.main.temp);
@@ -127,12 +123,13 @@ $(document).ready(function () {
   }); // end of search-btn click event listener
 
   // Event handler for tapping the enter button on the keyboard
-  $("#search-input").on('keyup', function (event) {
-    if (event.key === "Enter" || event.keyCode === 13) { //event.keyCode is depreciated. Left here to support older browsers
-        event.preventDefault();
-        $("#search-btn").click();
+  $("#search-input").on("keyup", function (event) {
+    if (event.key === "Enter" || event.keyCode === 13) {
+      //event.keyCode is depreciated. Left here to support older browsers
+      event.preventDefault();
+      $("#search-btn").click();
     }
-  }); 
+  });
 
   /**************************************************
    * Functions for different cocktails based on ingridients
@@ -173,7 +170,9 @@ $(document).ready(function () {
                   whiskeyCocktail.drinks[0][`strIngredient${i}`] !== "null"
                 ) {
                   $("#cocktail-ingridients").append(
-                    `<li> ${whiskeyCocktail.drinks[0][`strIngredient${i}`]}</li>`
+                    `<li> ${
+                      whiskeyCocktail.drinks[0][`strIngredient${i}`]
+                    }</li>`
                   );
                 } else {
                   $("#cocktail-ingridients").append(" ");
@@ -278,7 +277,8 @@ $(document).ready(function () {
               console.log(ginCocktail);
               console.log(ginCocktail.drinks[0].strDrink);
               cocktailTitleEl.text(
-                "Brighten up this mild day with a glass of " + ginCocktail.drinks[0].strDrink
+                "Brighten up this mild day with a glass of " +
+                  ginCocktail.drinks[0].strDrink
               );
               instructionsEl.text(ginCocktail.drinks[0].strInstructions);
               $("#cocktail-thumb").attr(
@@ -409,7 +409,9 @@ $(document).ready(function () {
                   tequilaCocktail.drinks[0][`strIngredient${i}`] !== "null"
                 ) {
                   $("#cocktail-ingridients").append(
-                    `<li> ${tequilaCocktail.drinks[0][`strIngredient${i}`]}</li>`
+                    `<li> ${
+                      tequilaCocktail.drinks[0][`strIngredient${i}`]
+                    }</li>`
                   );
                 } else {
                   $("#cocktail-ingridients").append(" ");
@@ -441,7 +443,10 @@ $(document).ready(function () {
   };
 
   function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
       mybutton.style.display = "block";
     } else {
       mybutton.style.display = "none";
@@ -454,7 +459,10 @@ $(document).ready(function () {
   }
 
   function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
       mybutton.style.display = "block";
     } else {
       mybutton.style.display = "none";
@@ -470,10 +478,10 @@ $(document).ready(function () {
    * Click event for "Add to favorites" button
    ********************************************/
   $("#faveBtn").on("click", function () {
-    $("#save-msg").text("Your cocktail has been saved");   
-    setTimeout(function(){
+    $("#save-msg").text("Your cocktail has been saved");
+    setTimeout(function () {
       $("#save-msg").text("");
-    }, 2000);   
+    }, 2000);
     // create an object to store the data
     var cocktailData = {
       title: cocktailTitleEl.text(),
@@ -483,22 +491,20 @@ $(document).ready(function () {
     };
     console.log(cocktailData);
     // get existing data from local storage incase there are favorites stored
-    var cocktailDataArray = JSON.parse(localStorage.getItem('cocktailData')) || [];
+    var cocktailDataArray =
+      JSON.parse(localStorage.getItem("cocktailData")) || [];
     // add new data to the array
     cocktailDataArray.push(cocktailData);
     // save the updated array to localStorage
     localStorage.setItem("cocktailData", JSON.stringify(cocktailDataArray));
   }); // end Add to favourite event handler
 
-
   /*********************************************
    * Roll again button event handler
    * ********************************************/
-  $("#rollAgainBtn").on("click", function() {
+  $("#rollAgainBtn").on("click", function () {
     $("#cocktail-ingridients").empty();
-    
+
     getFeaturedCocktail();
   }); // end Roll again button event handler
-
 }); // end document ready function
-
