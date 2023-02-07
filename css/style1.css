@@ -191,7 +191,7 @@ footer a:hover{
 /* MEDIA QUERY
 /*******************************************/
 /* Extra Small devices */
-  @media only screen and (max-width: 320px)  {
+  /* @media only screen and (max-width: 320px)  {
     h1 {
         font-size: 40px;
     }
@@ -207,10 +207,10 @@ footer a:hover{
         padding-left: 0.25;
         padding-right: 0.25;
     }
-}
+} */
 
 /* Small devices */
-@media only screen and (max-width: 769px) {
+/* @media only screen and (max-width: 769px) {
     h1 {
          font-size: 60px;
      }
@@ -224,10 +224,10 @@ footer a:hover{
         font-size: 30px;
     }
     
-}
+} */
 
 /* Medium devices */
-@media only screen and (max-width: 1025px) {
+/* @media only screen and (max-width: 1025px) {
     h1 {
          font-size: 70px;
      }
@@ -240,26 +240,28 @@ footer a:hover{
     .fav-cocktail-title {
         font-size: 40px;
     }
-}
+} */
 
 /* Large devices */
-@media only screen and (min-width: 992px) {
+/* @media only screen and (min-width: 992px) {
     #favorites-container .col-lg-5 {
         padding-left: 0;
     }
-}
+} */
 
-/* Large devices */
-/* @media only screen and (min-width: 979px) {
+
+@media (max-width: 767px) {
     h1 {
-         font-size: 100px;
-     }
+      font-size: 50px;
     }
-*/
-
-/* 
-Mobile devices – 320px — 480px.
-iPads, Tablets – 481px — 768px.
-Small screens, laptops – 769px — 1024px.
-Desktops, large screens – 1025px — 1200px.
-Extra large screens, TV – 1201px, and more. */
+    .jumbotron_content {
+      top: 100px;
+    }
+    .jumborton_video {
+      height: 600px;
+    }
+    .jumbotron_overlay {
+      height: 600px;
+    }
+  }
+  
