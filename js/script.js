@@ -490,7 +490,22 @@ $(document).ready(function () {
   }); // end Roll again button event handler
 }); // end document ready function
 
+// TEST FOR MODAL TO ONLY SHOW ON FIRST PAGE LOAD
+$('#myModal1').on('shown.bs.modal', function() {
+  localStorage.setItem('modal_displayed', 'true');
+});
+
+// Check for local storage on page load
+$(document).ready(function() {
+  if (localStorage.getItem('modal_displayed') == 'true') {
+      $('#myModal1').modal('hide');
+  }
+});
+// end of test
+
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
