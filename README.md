@@ -35,9 +35,6 @@ Favourites Page
 ![Gif of site](./images/ezgif.com-video-to-gif.gif)
 
 
-## Deployed Page
-https://jessie93.github.io/Weather-Pourcast/
-
 
 ## Contributors
 
@@ -46,6 +43,8 @@ https://github.com/ladykays
 https://github.com/ffionerin
 https://github.com/Temioye
 
+## Deployed Page
+https://jessie93.github.io/Weather-Pourcast/
 
 ## Credits
 * https://blog.logrocket.com/localstorage-javascript-complete-guide/
