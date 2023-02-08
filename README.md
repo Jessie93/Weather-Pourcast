@@ -24,12 +24,25 @@ We've created a website that provides users with a unique experience by offering
 
 ## Screenshots
 
-![Screenshot of home page]()
-![Screenshot of favourites page]()
+Home Page
+![Screenshot of home page including a modal](./images/screencapture-jessie93-github-io-Weather-Pourcast-index-html-2023-02-08-18_21_46.png)
+> **Note**: Please note screenshot includes pop up modal
+
+Favourites Page
+![Screenshot of favourites page](./images/screencapture-jessie93-github-io-Weather-Pourcast-favourite-html-2023-02-08-18_21_31.png)
+
+
+![Gif of site](./images/ezgif.com-video-to-gif.gif)
 
 ## Deployed Page
-
 https://jessie93.github.io/Weather-Pourcast/
+
+## Contributors
+https://github.com/Jessie93
+https://github.com/ladykays
+https://github.com/ffionerin
+https://github.com/Temioye
+
 
 ## Credits
 * https://blog.logrocket.com/localstorage-javascript-complete-guide/
