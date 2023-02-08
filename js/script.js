@@ -1,8 +1,5 @@
 $(document).ready(function () {
   $("#myModal1").modal("show");
-});
-
-$(document).ready(function () {
   var cocktailTitleEl = $("#cocktail-title");
   var instructionsEl = $("#cocktail-instructions");
 
