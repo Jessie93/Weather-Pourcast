@@ -34,6 +34,12 @@ Favourites Page
 
 ![Gif of site](./images/ezgif.com-video-to-gif.gif)
 
+## Contributors
+https://github.com/Jessie93
+https://github.com/ladykays
+https://github.com/ffionerin
+https://github.com/Temioye
+
 ## Deployed Page
 https://jessie93.github.io/Weather-Pourcast/
 
@@ -45,8 +51,3 @@ https://jessie93.github.io/Weather-Pourcast/
 * https://api.jquery.com/empty/
 * https://stackoverflow.com/questions/7060750/detect-the-enter-key-in-a-text-input-field
 
-## Contributors
-https://github.com/Jessie93
-https://github.com/ladykays
-https://github.com/ffionerin
-https://github.com/Temioye
