@@ -458,22 +458,6 @@ $(document).ready(function () {
     document.documentElement.scrollTop = 0;
   }
 
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-
   /*******************************************
    * Click event for "Add to favorites" button
    ********************************************/
@@ -508,3 +492,8 @@ $(document).ready(function () {
     getFeaturedCocktail();
   }); // end Roll again button event handler
 }); // end document ready function
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
