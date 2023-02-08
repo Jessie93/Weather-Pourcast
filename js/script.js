@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#myModal").modal("show");
+  $("#myModal1").modal("show");
 });
 
 $(document).ready(function () {
@@ -123,10 +123,11 @@ $(document).ready(function () {
   }); // end of search-btn click event listener
 
   // Event handler for tapping the enter button on the keyboard
-  $("#search-input").on('keydown', function (event) {
-    if (event.key === "Enter"  || event.keyCode === 13) { //event.keyCode is depreciated. Left here to support older browsers
-        event.preventDefault();
-        $("#search-btn").click();
+  $("#search-input").on("keydown", function (event) {
+    if (event.key === "Enter" || event.keyCode === 13) {
+      //event.keyCode is depreciated. Left here to support older browsers
+      event.preventDefault();
+      $("#search-btn").click();
     }
   });
 
