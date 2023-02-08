@@ -36,18 +36,14 @@ Favourites Page
 
 
 ## Deployed Page
-
 https://jessie93.github.io/Weather-Pourcast/
 
 
 ## Contributors
 
 https://github.com/Jessie93
-
 https://github.com/ladykays
-
 https://github.com/ffionerin
-
 https://github.com/Temioye
 
 
