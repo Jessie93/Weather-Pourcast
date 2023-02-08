@@ -25,7 +25,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Let's see weather you're old enough!</h4>
+                <h4 class="modal-title">Let's see "<span class="emphasis">Weather</span>" you're old enough!</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="container"></div>
@@ -34,8 +34,8 @@
 
             </div>
             <div class="modal-footer">
-                <a href="#" id=yep class="btn btn-primary" data-dismiss="modal">Yep 🍹</a>
-                <a href='https://www.chromedino.com/' id=nope target="_blank" data-target="modal" class="btn btn-secondary">Not yet ⛔️</a>
+                <a href="#" class="btn btn-primary" data-dismiss="modal">Yep 🍹</a>
+                <a href='https://www.chromedino.com/' data-target="modal" class="btn btn-secondary">Not yet ⛔️</a>
             </div>
         </div>
     </div>
@@ -69,7 +69,7 @@
 <!--Jumbotron-->
 <section id="jumbotron text-light">
     <div class="jumbotron_overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" loading="lazy" class="jumborton_video">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" loading="lazy" class="jumborton_video" alt="resturant with a glass of sparkling drink">
             <source src="./images/pexels-george-morina-5821366.mp4" type="video/mp4">
         </video>
     <div class="jumbotron_content h-100 container-xxl"> 
@@ -87,7 +87,7 @@
 
 <!--Cocktail Card-->
 <section class="card row flex-row mb-0" >
-    <img class="col-lg-5" id="cocktail-thumb" src=""/>
+    <img class="col-lg-5" id="cocktail-thumb" src="" alt="cocktail"/>
     <div class="col-lg-6 card-body ml-5" id="cocktail-card" style="text-align: left;">
         <div class="weather-div"></div>
         <h2 class="card-title" id="cocktail-title"></h2>

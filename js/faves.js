@@ -55,7 +55,7 @@ for (var i = 0; i < cocktailDataArray.length; i++) { //change cocktailDataArray.
   // create the card
   var cardHTML = `
     <div class="cardfav row flex-row mb-5 p-5 bg-light shadow p-3 mb-5 bg-white rounded">
-      <img src="${cocktailDataArray[i].image}" class="col-lg-5 card-img-top fav-cocktail-thumb">
+      <img src="${cocktailDataArray[i].image}" class="col-lg-5 card-img-top fav-cocktail-thumb" alt="cocktail">
       <div class="card-body col-lg-6 ml-5 fav-cocktail-card" style="text-align: left;" >
         <h2 class="card-title fav-cocktail-title" >${cocktailDataArray[i].title}</h2>
         <ul class="card-text list-group-flush" id="cocktail-ingredients">
